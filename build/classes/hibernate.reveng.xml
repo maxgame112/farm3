@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="induct" match-name="alert"/>
+  <table-filter match-catalog="induct" match-name="breeding"/>
+  <table-filter match-catalog="induct" match-name="cable_disease"/>
+  <table-filter match-catalog="induct" match-name="cattle"/>
+  <table-filter match-catalog="induct" match-name="cattle_stamp"/>
+  <table-filter match-catalog="induct" match-name="cattle_wean"/>
+  <table-filter match-catalog="induct" match-name="cattle_year"/>
+  <table-filter match-catalog="induct" match-name="color"/>
+  <table-filter match-catalog="induct" match-name="count_breed"/>
+  <table-filter match-catalog="induct" match-name="disease"/>
+  <table-filter match-catalog="induct" match-name="farm"/>
+  <table-filter match-catalog="induct" match-name="group_cattle"/>
+  <table-filter match-catalog="induct" match-name="group_medicine"/>
+  <table-filter match-catalog="induct" match-name="horn_detering"/>
+  <table-filter match-catalog="induct" match-name="medicine"/>
+  <table-filter match-catalog="induct" match-name="member"/>
+  <table-filter match-catalog="induct" match-name="misscarry"/>
+  <table-filter match-catalog="induct" match-name="pregnant"/>
+  <table-filter match-catalog="induct" match-name="privilege"/>
+  <table-filter match-catalog="induct" match-name="semen"/>
+  <table-filter match-catalog="induct" match-name="sex"/>
+  <table-filter match-catalog="induct" match-name="stall"/>
+  <table-filter match-catalog="induct" match-name="status_alert"/>
+  <table-filter match-catalog="induct" match-name="status_born"/>
+  <table-filter match-catalog="induct" match-name="status_breed"/>
+  <table-filter match-catalog="induct" match-name="status_cattle"/>
+  <table-filter match-catalog="induct" match-name="status_disease"/>
+  <table-filter match-catalog="induct" match-name="status_medicine"/>
+  <table-filter match-catalog="induct" match-name="status_pregnant"/>
+  <table-filter match-catalog="induct" match-name="status_treat"/>
+  <table-filter match-catalog="induct" match-name="sync"/>
+  <table-filter match-catalog="induct" match-name="synchronize"/>
+  <table-filter match-catalog="induct" match-name="treatment_history"/>
+  <table-filter match-catalog="induct" match-name="type_alert"/>
+  <table-filter match-catalog="induct" match-name="type_cattle"/>
+  <table-filter match-catalog="induct" match-name="type_horn"/>
+  <table-filter match-catalog="induct" match-name="type_medicine"/>
+  <table-filter match-catalog="induct" match-name="type_sync"/>
+  <table-filter match-catalog="induct" match-name="unit_medicine"/>
+</hibernate-reverse-engineering>

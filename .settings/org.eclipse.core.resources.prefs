@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//src/main/java/farm2/spring/controller/CertificatePdfController.java=UTF-8
+encoding//src/main/java/farm2/spring/myapp/AgeTool.java=UTF-8
+encoding//src/main/java/healthcares/spring/controller/MedicineController.java=UTF-8
+encoding//src/main/webapp/WEB-INF/CertificateofCattle/report/cover.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/CertificateofCattle/report/kokun.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/CertificateofCattle/report/kopun1.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/CertificateofCattle/report/kopun2.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/CertificateofCattle/report/kopun3.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/CertificateofCattle/report/kopun4.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/CertificateofCattle/report/kopun5.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/CertificateofCattle/report/koshow.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/CertificateofCattle/report/list.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/CertificateofCattle/report/report_kun.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/Nutrient/report/LowReport.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/Storehouse/report/ReportOrder.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/Storehouse/report/ReportStock.jrxml=UTF-8

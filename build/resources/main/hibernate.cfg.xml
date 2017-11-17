@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE hibernate-configuration SYSTEM "classpath://org/hibernate/hibernate-configuration-3.0.dtd"> -->
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="farm2016">
+        <!-- <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">jsp2016</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/farmmanagement2</property>
+        <property name="hibernate.connection.username">jspuser</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property> -->
+        
+    <mapping class="farm2.spring.model.Alert"/>
+    <mapping class="farm2.spring.model.AlertStorehouse"/>
+    <mapping class="farm2.spring.model.Bill"/>
+    <mapping class="farm2.spring.model.Breed"/>
+    <mapping class="farm2.spring.model.Breeding"/>
+    <mapping class="farm2.spring.model.Bucket"/>
+    <mapping class="farm2.spring.model.CableDisease"/>
+    <mapping class="farm2.spring.model.Cattle"/>
+    <mapping class="farm2.spring.model.CattleDetail"/>
+    <mapping class="farm2.spring.model.CattleFatten"/>
+    <mapping class="farm2.spring.model.CattleNutrient"/>
+    <mapping class="farm2.spring.model.CattleShow"/>
+    <mapping class="farm2.spring.model.CattleStamp"/>
+    <mapping class="farm2.spring.model.CattleStrain"/>
+    <mapping class="farm2.spring.model.CattleWean"/>
+    <mapping class="farm2.spring.model.CattleYear"/>
+    <mapping class="farm2.spring.model.Color"/>
+    <mapping class="farm2.spring.model.CountBreed"/>
+    <mapping class="farm2.spring.model.Disease"/>
+    <mapping class="farm2.spring.model.Farm"/>
+    <mapping class="farm2.spring.model.FattenList"/>
+    <mapping class="farm2.spring.model.Festivity"/>
+    <mapping class="farm2.spring.model.FestivityFattenHistory"/>
+    <mapping class="farm2.spring.model.FestivityShowHistory"/>
+    <mapping class="farm2.spring.model.FestivityStrainHistory"/>
+    <mapping class="farm2.spring.model.FormList"/>
+    <mapping class="farm2.spring.model.FormulaRecord"/>
+    <mapping class="farm2.spring.model.FormulaRecord2"/>
+    <mapping class="farm2.spring.model.Gene"/>
+    <mapping class="farm2.spring.model.GroupCattle"/>
+    <mapping class="farm2.spring.model.GroupMedicine"/>
+    <mapping class="farm2.spring.model.HornDetering"/>
+    <mapping class="farm2.spring.model.Medicine"/>
+    <mapping class="farm2.spring.model.MedicineImport"/>
+    <mapping class="farm2.spring.model.MedicineOrder"/>
+    <mapping class="farm2.spring.model.MedicineRelease"/>
+    <mapping class="farm2.spring.model.Member"/>
+    <mapping class="farm2.spring.model.Misscarry"/>
+    <mapping class="farm2.spring.model.Pay"/>
+    <mapping class="farm2.spring.model.Pregnant"/>
+    <mapping class="farm2.spring.model.Privilege"/>
+    <mapping class="farm2.spring.model.RawMaterial"/>
+    <mapping class="farm2.spring.model.RawMaterialFormula"/>
+    <mapping class="farm2.spring.model.RawMaterialPrice"/>
+    <mapping class="farm2.spring.model.RawMaterialImport"/>
+    <mapping class="farm2.spring.model.RawMaterialNutrient"/>
+    <mapping class="farm2.spring.model.RawMaterialOrder"/>
+    <mapping class="farm2.spring.model.RawMaterialRelease"/>
+    <mapping class="farm2.spring.model.Report"/>
+    <mapping class="farm2.spring.model.Semen"/>
+    <mapping class="farm2.spring.model.SemenImport"/>
+    <mapping class="farm2.spring.model.SemenOrder"/>
+    <mapping class="farm2.spring.model.SemenRelease"/>
+    <mapping class="farm2.spring.model.Sex"/>
+    <mapping class="farm2.spring.model.Stall"/>
+    <mapping class="farm2.spring.model.Standard"/>
+    <mapping class="farm2.spring.model.Status"/>
+    <mapping class="farm2.spring.model.StatusAlert"/>
+    <mapping class="farm2.spring.model.StatusBill"/>
+    <mapping class="farm2.spring.model.StatusBorn"/>
+    <mapping class="farm2.spring.model.StatusCattle"/>
+    <mapping class="farm2.spring.model.StatusDisease"/>
+    <mapping class="farm2.spring.model.StatusMedicine"/>
+    <mapping class="farm2.spring.model.StatusPregnant"/>
+    <mapping class="farm2.spring.model.StatusTreat"/>
+    <mapping class="farm2.spring.model.Sync"/>
+    <mapping class="farm2.spring.model.Synchronize"/>
+    <mapping class="farm2.spring.model.Tool"/>
+    <mapping class="farm2.spring.model.ToolBorrow"/>
+    <mapping class="farm2.spring.model.ToolBroken"/>
+    <mapping class="farm2.spring.model.ToolImport"/>
+    <mapping class="farm2.spring.model.ToolOrder"/>
+    <mapping class="farm2.spring.model.ToolRelease"/>
+    <mapping class="farm2.spring.model.TreatmentHistory"/>
+    <mapping class="farm2.spring.model.Type"/>
+    <mapping class="farm2.spring.model.TypeAlert"/>
+    <mapping class="farm2.spring.model.TypeBill"/>
+    <mapping class="farm2.spring.model.TypeBucket"/>
+    <mapping class="farm2.spring.model.TypeCattle"/>
+    <mapping class="farm2.spring.model.TypeCow"/>
+    <mapping class="farm2.spring.model.TypeFormula"/>
+    <mapping class="farm2.spring.model.TypeHorn"/>
+    <mapping class="farm2.spring.model.TypeMaterial"/>
+    <mapping class="farm2.spring.model.TypeNutrient"/>
+    <mapping class="farm2.spring.model.TypeSync"/>
+    <mapping class="farm2.spring.model.TypeTool"/>
+    <mapping class="farm2.spring.model.UnitMedicine"/>
+    <mapping class="farm2.spring.model.UnitNutrient"/>
+    <mapping class="farm2.spring.model.UnitRawMaterial"/>
+    <mapping class="farm2.spring.model.UnitTool"/>
+    <mapping class="farm2.spring.model.Worktogether"/>
+    </session-factory> 
+    
+    
+</hibernate-configuration>

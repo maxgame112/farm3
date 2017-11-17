@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.4.final using JasperReports Library version 6.0.4  -->
+<!-- 2016-06-25T23:19:20 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportmember" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7c2bd76f-11ef-4147-a62e-8fb2dbd2b2a1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="username" class="java.lang.String"/>
+	<field name="first" class="java.lang.String"/>
+	<field name="last" class="java.lang.String"/>
+	<field name="id" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="129" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="220" y="10" width="100" height="60" uuid="76981c0f-894e-4961-87e4-f1f1cc871092"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Niramit AS" size="24"/>
+				</textElement>
+				<text><![CDATA[
+รหัส]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="10" width="100" height="60" uuid="002a3adc-2c57-4281-a50e-f39493863541"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Niramit AS" size="24"/>
+				</textElement>
+				<text><![CDATA[
+ชื่อ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="10" width="100" height="60" uuid="38c0e922-3af2-4689-9303-fe92c7742410"/>
+				<textElement>
+					<font fontName="TH Niramit AS" size="24"/>
+				</textElement>
+				<text><![CDATA[
+นามสกุล]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="0" width="100" height="30" uuid="f9840a1d-42a5-4f8b-8b5a-fd34a2bb097d"/>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="0" width="100" height="30" uuid="83fd0d18-4309-4ac6-8da1-4045515512d8"/>
+				<text><![CDATA[id]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="220" y="0" width="100" height="50" uuid="80caa8c3-08b7-4e61-8c96-4586885200a4"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Niramit AS" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[
+$F{username}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="100" height="50" uuid="2886eff0-5988-4d6e-b5f8-1092a7900b1d"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Niramit AS" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[
+$F{first}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="0" width="100" height="50" uuid="5ed97c8a-e57c-46fb-b2f8-e03dea497067"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Niramit AS" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[
+$F{last}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="22" width="100" height="30" uuid="886bee0b-f233-42f3-aecd-8475ce4ddc3b"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

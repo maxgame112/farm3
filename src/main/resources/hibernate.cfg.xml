@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "classpath://org/hibernate/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="induct">
+<!--         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">jsp2016</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/induct</property>
+        <property name="hibernate.connection.username">jspuser</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property> -->
+        
+	<mapping class="healthcares.spring.model.Alert"/>
+  <mapping class="healthcares.spring.model.Breeding"/>
+  <mapping class="healthcares.spring.model.CableDisease"/>
+  <mapping class="healthcares.spring.model.Cattle"/>
+  <mapping class="healthcares.spring.model.CattleStamp"/>
+  <mapping class="healthcares.spring.model.CattleWean"/>
+  <mapping class="healthcares.spring.model.CattleYear"/>
+  <mapping class="healthcares.spring.model.Color"/>
+  <mapping class="healthcares.spring.model.CountBreed"/>
+  <mapping class="healthcares.spring.model.Disease"/>
+  <mapping class="healthcares.spring.model.GroupCattle"/>
+  <mapping class="healthcares.spring.model.GroupMedicine"/>
+  <mapping class="healthcares.spring.model.HornDetering"/>
+  <mapping class="healthcares.spring.model.Medicine"/>
+  <mapping class="healthcares.spring.model.Member"/>
+  <mapping class="healthcares.spring.model.Pregnant"/>
+  <mapping class="healthcares.spring.model.Privilege"/>
+  <mapping class="healthcares.spring.model.Semen"/>
+  <mapping class="healthcares.spring.model.Sex"/>
+  <mapping class="healthcares.spring.model.Stall"/>
+  <mapping class="healthcares.spring.model.StatusAlert"/>
+  <mapping class="healthcares.spring.model.StatusBorn"/>
+  <mapping class="healthcares.spring.model.StatusBreed"/>
+  <mapping class="healthcares.spring.model.StatusCattle"/>
+  <mapping class="healthcares.spring.model.StatusPregnant"/>
+  <mapping class="healthcares.spring.model.StatusTreat"/>
+  <mapping class="healthcares.spring.model.Sync"/>
+  <mapping class="healthcares.spring.model.Synchronize"/>
+  <mapping class="healthcares.spring.model.TreatmentHistory"/>
+  <mapping class="healthcares.spring.model.TypeAlert"/>
+  <mapping class="healthcares.spring.model.TypeCattle"/>
+  <mapping class="healthcares.spring.model.TypeHorn"/>
+  <mapping class="healthcares.spring.model.TypeMedicine"/>
+  <mapping class="healthcares.spring.model.TypeSync"/>
+  <mapping class="healthcares.spring.model.UnitMedicine"/>
+  <mapping class="healthcares.spring.model.StatusMedicine"/>
+  <mapping class="healthcares.spring.model.StatusDisease"/>
+  <mapping class="healthcares.spring.model.Misscarry"/> 
+  <mapping class="healthcares.spring.model.Farm"/>
+        
+    </session-factory>
+</hibernate-configuration>
