@@ -60,7 +60,7 @@
 											<form:input path="name" id="" type="name" class="form-control"/>
 										</div>
 									</div>	
-									
+										
 									<div class="row form-group">
 										<label class="col-md-offset-s col-md-3 control-label"><font color="red">*</font> ประเภทของโค</label>
 									<div class="col-md-6">
@@ -191,7 +191,7 @@
 								</div>
 							</div>		
 							
-<%-- 							<div class="row form-group">
+						<div class="row form-group">
 									<label class="col-md-offset-s col-md-3 control-label"><font color="red">*</font> ฝูงโค</label>
 								<div class="col-md-6">
 										 <div>
@@ -210,7 +210,7 @@
 										 </div>											
 								</div>
 							</div>		
-							
+							 	
 							<div class="row form-group">
 									<label class="col-md-offset-s col-md-3 control-label"><font color="red">*</font> คอก</label>
 								<div class="col-md-6">
@@ -229,7 +229,7 @@
 											</form:select>
 										 </div>											
 								</div>
-							</div>	 --%>				
+							</div>			
 																												
 							<div class="row form-group">
 										<label class="col-md-offset-s col-md-3 control-lable"><font color="red">* </font> ชื่อฟาร์ม</label>

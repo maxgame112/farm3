@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="Breeding" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="breeding">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Cattle" embed-xml="true" fetch="select" insert="true" name="cattleByCattlemaId" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="cattlema_id"/>
+        </many-to-one>
+        <many-to-one class="Cattle" embed-xml="true" fetch="select" insert="true" name="cattleByCattlefaId" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="cattlefa_id"/>
+        </many-to-one>
+        <many-to-one class="CountBreed" embed-xml="true" fetch="select" insert="true" name="countBreed" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="count_breed_id"/>
+        </many-to-one>
+        <many-to-one class="Member" embed-xml="true" fetch="select" insert="true" name="member" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="member_id"/>
+        </many-to-one>
+        <many-to-one class="Semen" embed-xml="true" fetch="select" insert="true" name="semen" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="semen_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="stillTime" optimistic-lock="true" type="time" unique="false">
+            <column length="8" name="still_time">
+                <comment>เวลานิ่ง</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="dateTime" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="date_time"/>
+        </property>
+        <property generated="never" lazy="false" name="amount" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="amount"/>
+        </property>
+        <property generated="never" lazy="false" name="note" optimistic-lock="true" type="string" unique="false">
+            <column length="500" name="note"/>
+        </property>
+        <property generated="never" lazy="false" name="statusCattle" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="status_cattle">
+                <comment>สถานะโค</comment>
+            </column>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="pregnants" optimistic-lock="true" sort="unsorted" table="pregnant">
+            <key on-delete="noaction">
+                <column name="breeding_id"/>
+            </key>
+            <one-to-many class="Pregnant" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

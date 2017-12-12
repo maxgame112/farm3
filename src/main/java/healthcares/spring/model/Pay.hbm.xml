@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="Pay" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="pay">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Worktogether" embed-xml="true" fetch="select" insert="true" name="worktogether" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="worktogether_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="processingfee" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="processingfee" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="signsauction" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="signsauction"/>
+        </property>
+    </class>
+</hibernate-mapping>

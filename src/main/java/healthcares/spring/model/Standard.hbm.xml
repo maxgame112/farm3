@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="Standard" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="standard">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="startCalf1" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="start_calf1"/>
+        </property>
+        <property generated="never" lazy="false" name="startCalf2" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="start_calf2"/>
+        </property>
+        <property generated="never" lazy="false" name="startCalf3" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="start_calf3"/>
+        </property>
+        <property generated="never" lazy="false" name="endCalf1" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="end_calf1"/>
+        </property>
+        <property generated="never" lazy="false" name="endCalf2" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="end_calf2"/>
+        </property>
+        <property generated="never" lazy="false" name="endCalf3" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="end_calf3"/>
+        </property>
+        <property generated="never" lazy="false" name="startIntermediate1" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="start_intermediate1"/>
+        </property>
+        <property generated="never" lazy="false" name="startIntermediate2" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="start_intermediate2"/>
+        </property>
+        <property generated="never" lazy="false" name="startIntermediate3" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="start_intermediate3"/>
+        </property>
+        <property generated="never" lazy="false" name="endIntermediate1" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="end_intermediate1"/>
+        </property>
+        <property generated="never" lazy="false" name="endIntermediate2" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="end_intermediate2"/>
+        </property>
+        <property generated="never" lazy="false" name="endIntermediate3" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="end_intermediate3"/>
+        </property>
+        <property generated="never" lazy="false" name="startJunior1" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="start_junior1"/>
+        </property>
+        <property generated="never" lazy="false" name="startJunior2" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="start_junior2"/>
+        </property>
+        <property generated="never" lazy="false" name="startJunior3" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="start_junior3"/>
+        </property>
+        <property generated="never" lazy="false" name="endJunior1" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="end_junior1"/>
+        </property>
+        <property generated="never" lazy="false" name="endJunior2" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="end_junior2"/>
+        </property>
+        <property generated="never" lazy="false" name="endJunior3" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="end_junior3"/>
+        </property>
+        <property generated="never" lazy="false" name="startSenior1" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="start_senior1"/>
+        </property>
+        <property generated="never" lazy="false" name="startSenior2" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="start_senior2"/>
+        </property>
+        <property generated="never" lazy="false" name="startSenior3" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="start_senior3"/>
+        </property>
+        <property generated="never" lazy="false" name="endSenior1" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="end_senior1"/>
+        </property>
+        <property generated="never" lazy="false" name="endSenior2" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="end_senior2"/>
+        </property>
+        <property generated="never" lazy="false" name="endSenior3" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="end_senior3"/>
+        </property>
+    </class>
+</hibernate-mapping>

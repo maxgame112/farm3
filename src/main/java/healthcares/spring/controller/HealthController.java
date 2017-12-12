@@ -31,6 +31,7 @@ import healthcares.spring.dao.StatusTreatDao;
 import healthcares.spring.model.Alert;
 import healthcares.spring.model.Cattle;
 import healthcares.spring.model.Disease;
+import healthcares.spring.model.HornDetering;
 import healthcares.spring.model.Medicine;
 import healthcares.spring.model.Member;
 import healthcares.spring.model.StatusTreat;
@@ -40,6 +41,7 @@ import healthcares.spring.service.CableDiseaseService;
 import healthcares.spring.service.CattleService;
 import healthcares.spring.service.DiseaseService;
 import healthcares.spring.service.GroupMedicineService;
+import healthcares.spring.service.HornDeteringService;
 import healthcares.spring.service.MedicineService;
 import healthcares.spring.service.MemberService;
 import healthcares.spring.service.PrivilegeService;
@@ -48,6 +50,7 @@ import healthcares.spring.service.StatusMedicineService;
 import healthcares.spring.service.StatusTreatService;
 import healthcares.spring.service.TreatmentHistoryService;
 import healthcares.spring.service.TypeAlertService;
+import healthcares.spring.service.TypeHornService;
 import healthcares.spring.service.TypeMedicineService;
 import healthcares.spring.service.UnitMedicineService;
 import healthcares.string.Util;
@@ -74,6 +77,12 @@ public class HealthController {
 	
 	@Autowired
 	private CattleService cattleservice;
+	
+	@Autowired 
+	private TypeHornService typehornservice;
+	
+	@Autowired
+	private HornDeteringService horndeteringservice;
 	
 	@Autowired
 	private TreatmentHistoryService treatmenthistoryservice;
@@ -349,15 +358,21 @@ public class HealthController {
 		return "/health/list_recommend";
 	}
 	
+
 	@RequestMapping(value="treat_horn",method=RequestMethod.GET)
 	public String treat_horn(HttpSession session,Map<String,Object>map){
 		
-		String sessionUsername = (String)session.getAttribute("username");
+		String sessionUsername = (String)session.getAttribute("username"); 
 		map.put("ulist",memberService.getMemberByUsername(sessionUsername));
+		TreatmentHistory treatment = new TreatmentHistory();
+		map.put("treat", treatment);
 		map.put("cattletreat", cattleservice.getstaTreatcattle());
 		map.put("medicine", medicineservice.getAllMedicine());
 		map.put("disease", diseaseService.getAllDisease());
 		map.put("statusmedicine", statusmedicineservice.getAllStatusMedicine());
+		map.put("stattreat", statustreatservice.getAllStatusTreat());
+		map.put("dAlertList", typealertservice.getAllTypeAlertById(13));;
+		map.put("calves", cattleservice.GetCalves1(1));
 		return "health/treat_horn";
 	}
 	
@@ -367,9 +382,12 @@ public class HealthController {
 		String sessionUsername = (String)session.getAttribute("username");
 		map.put("ulist",memberService.getMemberByUsername(sessionUsername));
 		map.put("cattletreat", cattleservice.getstaTreatcattle());
+		/*map.put("calves", cattleservice.GetCalves1(1));*/
 		map.put("medicine", medicineservice.getAllMedicine());
 		map.put("disease", diseaseService.getAllDisease());
 		map.put("statusmedicine", statusmedicineservice.getAllStatusMedicine());
+		map.put("stattreat", statustreatservice.getAllStatusTreat());
+		map.put("dAlertList", typealertservice.getAllTypeAlertById(13));
 		return "health/treat_num";
 	}
 	
@@ -379,13 +397,15 @@ public class HealthController {
 		String sessionUsername = (String)session.getAttribute("username");
 		map.put("ulist",memberService.getMemberByUsername(sessionUsername));
 		map.put("cattletreat", cattleservice.getstaTreatcattle());
+		/*map.put("calves", cattleservice.GetCalves1(1));*/
 		map.put("medicine", medicineservice.getAllMedicine());
 		map.put("disease", diseaseService.getAllDisease());
 		map.put("statusmedicine", statusmedicineservice.getAllStatusMedicine());
+		map.put("stattreat", statustreatservice.getAllStatusTreat());
+		map.put("dAlertList", typealertservice.getAllTypeAlertById(13));
 		return "health/treat_birth";
 	}
 	
-
 	
 	@RequestMapping(value="treat_health",method=RequestMethod.GET)
 	public String treat_health(HttpSession session,Map<String,Object>map){
@@ -417,7 +437,7 @@ public class HealthController {
 	
 	@RequestMapping(value="savehealth",method=RequestMethod.POST)
 	public String savehealth(HttpSession session,Map<String, Object> map,
-							@RequestParam("cattle") int cattle,
+							@RequestParam("cattle") int cattle,	
 							@RequestParam("causeOfIllness") String causeOfIllness,
 							@RequestParam("medicine") int[] medicine,
 							@RequestParam("medicine") int med,
@@ -489,6 +509,125 @@ public class HealthController {
 			alert.setTypeAlert(typealertservice.getTypeAlerte(13));
 			alert.setMember(memberService.getMember(member));
 			alert.setCattle(cattleservice.getCattle(cattle));
+		
+			alert.setCattle_1(numCatt);
+			alert.setDatealert(DayAlert);
+			alert.setTimealert(time);
+			alert.setDayinput(DTnow);
+			alert.setTimeinput(TimeNow);
+			//alert.setNote(note);
+			alertservice.add(alert);
+	
+			 cattle1.setStatusTreat(statustreatservice.getStatusTreat(2));
+			 cattleservice.edit(cattle1);
+
+
+			 
+			for (int i = 0; i < stat ; i++) {
+				
+				Medicine medicine2 = medicineservice.getMedicine(med);
+				int s = medicine2.getMedicineSuccess();
+				s = s+1;
+				medicine2.setMedicineSuccess(s);
+				//System.out.println(s);
+				medicineservice.edit(medicine2);
+				
+				treatmentHistory.setCattle(cattleservice.getCattle(cattle));
+				
+				treatmentHistory.setDisease(diseaseService.getDisease(disease));
+				treatmentHistory.setMember(memberService.getMember(member));
+				treatmentHistory.setStatusMedicine(statusmedicineservice.getStatusMedicine(stat));
+				treatmentHistory.setMedicine(medicineservice.getMedicine(medicine[i]));
+				treatmentHistory.setCauseOfIllness(causeOfIllness);
+				treatmentHistory.setDateTreat(dateTreat);
+				treatmentHistory.setDateEndTreat(time);
+				treatmentHistory.setDoseUsesage(doseUsesage[i]);
+				treatmentHistory.setStatusTreat(statustreatservice.getStatusTreat(2));
+				treatmenthistoryservice.add(treatmentHistory);
+				
+			}
+		//}
+		
+
+		 
+
+		return "redirect:index";
+	}
+	
+	/*@RequestMapping(value="savehealth",method=RequestMethod.POST)
+	public String savehealth(HttpSession session,Map<String, Object> map,
+							@RequestParam("cattle") int cattle,
+							@RequestParam("causeOfIllness") String causeOfIllness,
+							@RequestParam("medicine") int[] medicine,
+							@RequestParam("medicine") int med,
+							@RequestParam("date") String dateTreat,
+							@RequestParam("disease") int disease,
+							@RequestParam("memberid") int member,
+							@RequestParam("statusmedicine") int stat,
+							@RequestParam("doseUsesage") int[] doseUsesage,
+							@RequestParam("day_input") int dayId,
+							@RequestParam("dateEndTreat") String time){
+		
+		 DateTimeFormatter fmt = DateTimeFormat.forPattern("yyyy-MM-dd");
+		 DateTimeFormatter fmt1 = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
+		 DateTimeFormatter fmt2 = DateTimeFormat.forPattern("HH:mm:ss");
+		 DateFormat fmt3 = new SimpleDateFormat("yyyy");
+		 DateTime dt = new DateTime();
+		 String DTnow = fmt1.print(dt);
+		 String TimeNow = fmt2.print(dt);
+		 
+		 Cattle cattle1 = cattleservice.getCattle(cattle);
+		 String numCatt = cattle1.getNum();
+
+		 TreatmentHistory treatmentHistory = new TreatmentHistory();
+		 
+		 if (statusTreat == 1 ) {
+			 cattle1.setStatusTreat(statustreatservice.getStatusTreat(1));
+			 cattleservice.edit(cattle1);
+			 
+		
+					
+					treatmentHistory.setCattle(cattleservice.getCattle(cattle));
+					treatmentHistory.setDisease(diseaseService.getDisease(0));
+					treatmentHistory.setMember(memberService.getMember(0));
+					treatmentHistory.setStatusMedicine(statusmedicineservice.getStatusMedicine(0));
+					treatmentHistory.setMedicine(medicineservice.getMedicine(0));
+					treatmentHistory.setCauseOfIllness(null);
+					treatmentHistory.setDateTreat(dateTreat);
+					treatmentHistory.setDateEndTreat(time);
+					treatmentHistory.setDoseUsesage(0);
+					treatmentHistory.setStatusTreat(statustreatservice.getStatusTreat(2));
+					treatmenthistoryservice.add(treatmentHistory);
+	
+
+
+
+		}if (statusTreat == 3){
+			 
+			cattle1.setStatusTreat(statustreatservice.getStatusTreat(3));
+			 cattleservice.edit(cattle1);	
+				
+			 
+		}
+		
+			List<Alert> alertList = alertservice.getAlertId(numCatt, 13);
+			for (Alert closeAlert : alertList) {
+			closeAlert.setStatusAlert(statusalertservice.getStatusAlert(2));
+			closeAlert.setMember(memberService.getMember(member));
+			alertservice.edit(closeAlert);
+		}
+		
+		//if (statusTreat == 2){
+			
+			 //alert
+			Alert alert = new Alert();
+			 DateTime dtOrg = new DateTime(dateTreat);
+			 DateTime dtPlusOne = dtOrg.plusDays(dayId);
+			 String DayAlert = fmt.print(dtPlusOne);
+			alert.setStatusAlert(statusalertservice.getStatusAlert(1));
+			alert.setTypeAlert(typealertservice.getTypeAlerte(13));
+			alert.setMember(memberService.getMember(member));
+			alert.setCattle(cattleservice.getCattle(cattle));
 			alert.setCattle_1(numCatt);
 			alert.setDatealert(DayAlert);
 			alert.setTimealert(time);
@@ -529,7 +668,6 @@ public class HealthController {
 		 
 
 		return "redirect:index";
-	}
-	
+	}*/
 	
 }

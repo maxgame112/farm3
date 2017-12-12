@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="CattlePedigree" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="cattle_pedigree">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Cattle" embed-xml="true" fetch="select" insert="true" name="cattle" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="cattle_id"/>
+        </many-to-one>
+        <many-to-one class="Farm" embed-xml="true" fetch="select" insert="true" name="farm" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="farm_id"/>
+        </many-to-one>
+        <many-to-one class="TypeCattle" embed-xml="true" fetch="select" insert="true" name="typeCattle" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="type_cattle_id"/>
+        </many-to-one>
+        <many-to-one class="TypeClassBeef" embed-xml="true" fetch="select" insert="true" name="typeClassBeef" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="type_class_beef_id"/>
+        </many-to-one>
+        <many-to-one class="TypeClassDairy" embed-xml="true" fetch="select" insert="true" name="typeClassDairy" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="type_class_dairy_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="ma" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="ma"/>
+        </property>
+        <property generated="never" lazy="false" name="docility" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="docility"/>
+        </property>
+        <property generated="never" lazy="false" name="tenderness" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="tenderness"/>
+        </property>
+        <property generated="never" lazy="false" name="breastFront" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="breast_front"/>
+        </property>
+        <property generated="never" lazy="false" name="breastBack" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="breast_back"/>
+        </property>
+        <property generated="never" lazy="false" name="breastBackHeight" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="breast_back_height"/>
+        </property>
+        <property generated="never" lazy="false" name="breastBackWidth" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="breast_back_width"/>
+        </property>
+        <property generated="never" lazy="false" name="breastDepth" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="breast_depth"/>
+        </property>
+        <property generated="never" lazy="false" name="lenthNipple" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="lenth_nipple"/>
+        </property>
+        <property generated="never" lazy="false" name="frontBreast" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="front_breast"/>
+        </property>
+        <property generated="never" lazy="false" name="backBreast" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="back_breast"/>
+        </property>
+        <property generated="never" lazy="false" name="body" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="body"/>
+        </property>
+        <property generated="never" lazy="false" name="bodyDepth" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="body_depth"/>
+        </property>
+        <property generated="never" lazy="false" name="stong" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="stong"/>
+        </property>
+        <property generated="never" lazy="false" name="hipAngle" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="hip_angle"/>
+        </property>
+        <property generated="never" lazy="false" name="widthHips" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="width_hips"/>
+        </property>
+        <property generated="never" lazy="false" name="curBackLegs" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="cur_back_legs"/>
+        </property>
+        <property generated="never" lazy="false" name="straightBackLegs" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="straight_back_legs"/>
+        </property>
+        <property generated="never" lazy="false" name="hoofCorner" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="hoof_corner"/>
+        </property>
+        <property generated="never" lazy="false" name="pointLegHoof" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="point_leg_hoof"/>
+        </property>
+        <property generated="never" lazy="false" name="ageYield" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="age_yield"/>
+        </property>
+        <property generated="never" lazy="false" name="milk" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="milk"/>
+        </property>
+        <property generated="never" lazy="false" name="protein" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="protein"/>
+        </property>
+        <property generated="never" lazy="false" name="fat" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="fat"/>
+        </property>
+        <property generated="never" lazy="false" name="netIncome" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="net_income"/>
+        </property>
+        <property generated="never" lazy="false" name="birthRate" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="birth_rate"/>
+        </property>
+        <property generated="never" lazy="false" name="daughterBirthRate" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="daughter_birth_rate"/>
+        </property>
+        <property generated="never" lazy="false" name="firstDeath" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="first_death"/>
+        </property>
+        <property generated="never" lazy="false" name="daughterFirstDeath" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="daughter_first_death"/>
+        </property>
+        <property generated="never" lazy="false" name="daughterPregnancyRate" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="daughter_pregnancy_rate"/>
+        </property>
+        <property generated="never" lazy="false" name="somatic" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="somatic"/>
+        </property>
+        <property generated="never" lazy="false" name="tm" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="tm"/>
+        </property>
+        <property generated="never" lazy="false" name="sc" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="sc"/>
+        </property>
+        <property generated="never" lazy="false" name="rea" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="rea"/>
+        </property>
+        <property generated="never" lazy="false" name="imf" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="imf"/>
+        </property>
+        <property generated="never" lazy="false" name="rump" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="rump"/>
+        </property>
+        <property generated="never" lazy="false" name="adg" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="adg"/>
+        </property>
+        <property generated="never" lazy="false" name="calvingEaseDir" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="calving_ease_dir"/>
+        </property>
+        <property generated="never" lazy="false" name="calvingEaseDtrs" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="calving_ease_dtrs"/>
+        </property>
+        <property generated="never" lazy="false" name="gestationLength" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="gestation_length"/>
+        </property>
+        <property generated="never" lazy="false" name="200dayWt" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="200day_wt"/>
+        </property>
+        <property generated="never" lazy="false" name="400dayWt" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="400day_wt"/>
+        </property>
+        <property generated="never" lazy="false" name="600dayWt" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="600day_wt"/>
+        </property>
+        <property generated="never" lazy="false" name="matCow" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="mat_cow"/>
+        </property>
+        <property generated="never" lazy="false" name="200dayMilk" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="200day_milk"/>
+        </property>
+        <property generated="never" lazy="false" name="scrotalSize" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="scrotal_size"/>
+        </property>
+        <property generated="never" lazy="false" name="carcaseWt" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="carcase_wt"/>
+        </property>
+        <property generated="never" lazy="false" name="eyeMuscleArea" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="eye_muscle_area"/>
+        </property>
+        <property generated="never" lazy="false" name="ribFat" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="rib_fat"/>
+        </property>
+        <property generated="never" lazy="false" name="retailBeefYield" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="retail_beef_yield"/>
+        </property>
+        <property generated="never" lazy="false" name="ebv" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="ebv"/>
+        </property>
+        <property generated="never" lazy="false" name="acc" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="acc"/>
+        </property>
+        <property generated="never" lazy="false" name="price" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="price"/>
+        </property>
+        <property generated="never" lazy="false" name="priceStart" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="price_start"/>
+        </property>
+        <property generated="never" lazy="false" name="priceEnd" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="price_end"/>
+        </property>
+        <property generated="never" lazy="false" name="dateReport" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="date_report"/>
+        </property>
+        <property generated="never" lazy="false" name="picture" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="picture"/>
+        </property>
+        <property generated="never" lazy="false" name="numberEar" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="number_ear"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cattles" optimistic-lock="true" sort="unsorted" table="cattle">
+            <key on-delete="noaction">
+                <column name="pedigree_id"/>
+            </key>
+            <one-to-many class="Cattle" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

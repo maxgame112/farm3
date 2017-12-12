@@ -274,11 +274,15 @@ public class CalvesController {
 	public String numbercat(HttpSession session,Map<String, Object> map) {
 		String sessionUsername = (String)session.getAttribute("username");  
 		map.put("ulist",memberService.getMemberByUsername(sessionUsername));
+		
 		CattleStamp cattlestamp = new CattleStamp();
 		map.put("cattlestm",cattlestamp);
-		map.put("calve", cattleservice.GetCalves1(3));
+		map.put("calves", cattleservice.GetCalves1(1));
+		
 		return "/calves/numbercat";  												
 	}
+	
+
 	
 	@RequestMapping(value="/saveNumber",method = RequestMethod.POST)
 	public String saveNumber(HttpSession session,Map<String, Object> map,

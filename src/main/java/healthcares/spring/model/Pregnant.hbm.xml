@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="Pregnant" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="pregnant">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Breeding" embed-xml="true" fetch="select" insert="true" name="breeding" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="breeding_id"/>
+        </many-to-one>
+        <many-to-one class="Member" embed-xml="true" fetch="select" insert="true" name="member" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="member_id"/>
+        </many-to-one>
+        <many-to-one class="StatusPregnant" embed-xml="true" fetch="select" insert="true" name="statusPregnant" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="status_pregnant_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="datePreg" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="date_preg"/>
+        </property>
+        <property generated="never" lazy="false" name="dateSchedule" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="date_schedule"/>
+        </property>
+        <property generated="never" lazy="false" name="timePreg" optimistic-lock="true" type="time" unique="false">
+            <column length="8" name="time_preg"/>
+        </property>
+        <property generated="never" lazy="false" name="note" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="note"/>
+        </property>
+        <property generated="never" lazy="false" name="cattle" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="cattle"/>
+        </property>
+        <property generated="never" lazy="false" name="stat" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="stat"/>
+        </property>
+    </class>
+</hibernate-mapping>

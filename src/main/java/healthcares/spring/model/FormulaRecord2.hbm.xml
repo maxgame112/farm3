@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="FormulaRecord2" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="formula_record2">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Member" embed-xml="true" fetch="select" insert="true" name="member" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="Member_id"/>
+        </many-to-one>
+        <many-to-one class="TypeFormula" embed-xml="true" fetch="select" insert="true" name="typeFormula" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="Type_Formula_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="sumweight" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="sumweight" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="cost" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="cost" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="dm1" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="dm1" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="dm2" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="dm2" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="cp1" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="cp1" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="cp2" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="cp2" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="tdn1" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="tdn1" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="tdn2" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="tdn2" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="ndf1" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="ndf1" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="ndf2" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="ndf2" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="vita1" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="vita1" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="vita2" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="vita2" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="vite1" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="vite1" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="vite2" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="vite2" precision="12" scale="0"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="rawMaterialFormulas" optimistic-lock="true" sort="unsorted" table="raw_material_formula">
+            <key on-delete="noaction">
+                <column name="Formula_record2_id"/>
+            </key>
+            <one-to-many class="RawMaterialFormula" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

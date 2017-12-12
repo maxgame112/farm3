@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final -->
+<hibernate-mapping>
+
+<class
+    name="TreatmentHistory"
+    table="treatment_history"
+    catalog="farm2017"
+    optimistic-lock="version"
+>
+
+	<id 
+        name="id"
+        type="java.lang.Integer"
+    >
+    
+<column name="id" />
+	    <generator class="identity" />
+    </id>
+
+
+
+
+    <many-to-one
+	    name="cattle"
+	    class="Cattle"
+	    
+        fetch="select"
+    >
+<column name="cattle_id" />
+   </many-to-one>
+    <many-to-one
+	    name="disease"
+	    class="Disease"
+	    
+        fetch="select"
+    >
+<column name="disease_id" />
+   </many-to-one>
+    <many-to-one
+	    name="medicine"
+	    class="Medicine"
+	    
+        fetch="select"
+    >
+<column name="medicine_id" />
+   </many-to-one>
+    <many-to-one
+	    name="member"
+	    class="Member"
+	    
+        fetch="select"
+    >
+<column name="member_id" />
+   </many-to-one>
+    <many-to-one
+	    name="statusDisease"
+	    class="StatusDisease"
+	    
+        fetch="select"
+    >
+<column name="status_disease" />
+   </many-to-one>
+    <many-to-one
+	    name="statusMedicine"
+	    class="StatusMedicine"
+	    
+        fetch="select"
+    >
+<column name="status_medicine" />
+   </many-to-one>
+    <many-to-one
+	    name="statusTreat"
+	    class="StatusTreat"
+	    
+        fetch="select"
+    >
+<column name="status_treat_id" />
+   </many-to-one>
+    <property
+        name="symptom"
+	    type="string"
+    >
+<column name="symptom" length="400" />
+  </property>
+
+    <property
+        name="causeOfIllness"
+	    type="string"
+    >
+<column name="cause_of_illness" length="400" />
+  </property>
+
+    <property
+        name="beAllergic"
+	    type="string"
+    >
+<column name="be_allergic" length="400" />
+  </property>
+
+    <property
+        name="dateTreat"
+	    type="date"
+    >
+<column name="date_treat" length="10" />
+  </property>
+
+    <property
+        name="dateEndTreat"
+	    type="date"
+    >
+<column name="date_end_treat" length="10" />
+  </property>
+
+    <property
+        name="doseUsesage"
+	    type="string"
+    >
+<column name="dose_usesage" length="100" />
+  </property>
+
+    <property
+        name="dateTreatHorn"
+	    type="timestamp"
+    >
+<column name="date_treat_horn" length="19" >
+<comment>เริ่มต้นวันเวลาสูญเขา</comment>
+</column>  </property>
+
+    <property
+        name="dateTreatNum"
+	    type="timestamp"
+    >
+<column name="date_treat_num" length="19" >
+<comment>เริ่มต้นวันเวลาตีเบอร์</comment>
+</column>  </property>
+
+    <property
+        name="dateTreatBirth"
+	    type="timestamp"
+    >
+<column name="date_treat_birth" length="19" >
+<comment>เริ่มต้นวันเวลาคลอด</comment>
+</column>  </property>
+
+    <property
+        name="dateEndTreatHorn"
+	    type="timestamp"
+    >
+<column name="date_end_treat_horn" length="19" >
+<comment>สิ้นสุดวันเวลาสูญเขา</comment>
+</column>  </property>
+
+    <property
+        name="dateEndTreatNum"
+	    type="timestamp"
+    >
+<column name="date_end_treat_num" length="19" >
+<comment>สิ้นสุดวันเวลาตีเบอร์</comment>
+</column>  </property>
+
+    <property
+        name="dateEndTreatBirth"
+	    type="timestamp"
+    >
+<column name="date_end_treat_birth" length="19" >
+<comment>สิ้นสุดวันเวลาคลอด</comment>
+</column>  </property>
+
+    <property
+        name="dateStartMed"
+	    type="date"
+    >
+<column name="date_start_med" length="10" />
+  </property>
+
+    <property
+        name="dateStopMed"
+	    type="date"
+    >
+<column name="date_stop_med" length="10" />
+  </property>
+
+    <property
+        name="note"
+	    type="string"
+    >
+<column name="note" length="500" />
+  </property>
+
+
+</class>
+
+</hibernate-mapping>

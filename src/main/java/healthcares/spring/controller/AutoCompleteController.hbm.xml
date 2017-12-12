@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 11, 2017 5:40:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="healthcares.spring.controller.AutoCompleteController" table="AUTOCOMPLETECONTROLLER">
+        <id name="medicineservice" type="healthcares.spring.service.MedicineService" access="field">
+            <column name="MEDICINESERVICE" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="diseaseService" class="healthcares.spring.service.DiseaseService" access="field" fetch="join">
+            <column name="DISEASESERVICE" />
+        </many-to-one>
+        <many-to-one name="cableDiseaseService" class="healthcares.spring.service.CableDiseaseService" access="field" fetch="join">
+            <column name="CABLEDISEASESERVICE" />
+        </many-to-one>
+        <many-to-one name="memberService" class="healthcares.spring.service.MemberService" access="field" fetch="join">
+            <column name="MEMBERSERVICE" />
+        </many-to-one>
+        <many-to-one name="privilegeService" class="healthcares.spring.service.PrivilegeService" access="field" fetch="join">
+            <column name="PRIVILEGESERVICE" />
+        </many-to-one>
+        <many-to-one name="cattleservice" class="healthcares.spring.service.CattleService" access="field" fetch="join">
+            <column name="CATTLESERVICE" />
+        </many-to-one>
+        <many-to-one name="treatmenthistoryservice" class="healthcares.spring.service.TreatmentHistoryService" access="field" fetch="join">
+            <column name="TREATMENTHISTORYSERVICE" />
+        </many-to-one>
+        <many-to-one name="typemedicineservice" class="healthcares.spring.service.TypeMedicineService" access="field" fetch="join">
+            <column name="TYPEMEDICINESERVICE" />
+        </many-to-one>
+        <many-to-one name="unitmedicineservice" class="healthcares.spring.service.UnitMedicineService" access="field" fetch="join">
+            <column name="UNITMEDICINESERVICE" />
+        </many-to-one>
+        <many-to-one name="groupmedicineservice" class="healthcares.spring.service.GroupMedicineService" access="field" fetch="join">
+            <column name="GROUPMEDICINESERVICE" />
+        </many-to-one>
+        <many-to-one name="statusmedicineservice" class="healthcares.spring.service.StatusMedicineService" access="field" fetch="join">
+            <column name="STATUSMEDICINESERVICE" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

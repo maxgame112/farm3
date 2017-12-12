@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="HornDetering" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="horn_detering">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Cattle" embed-xml="true" fetch="select" insert="true" name="cattle" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="cattle_id"/>
+        </many-to-one>
+        <many-to-one class="Member" embed-xml="true" fetch="select" insert="true" name="member" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="member_id"/>
+        </many-to-one>
+        <many-to-one class="TypeHorn" embed-xml="true" fetch="select" insert="true" name="typeHorn" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="type_horn_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="date" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="date"/>
+        </property>
+        <property generated="never" lazy="false" name="note" optimistic-lock="true" type="string" unique="false">
+            <column length="450" name="note"/>
+        </property>
+        <property generated="never" lazy="false" name="performer" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="performer"/>
+        </property>
+    </class>
+</hibernate-mapping>

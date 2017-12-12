@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="CattleStrain" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="cattle_strain">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Member" embed-xml="true" fetch="select" insert="true" name="member" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="member_id" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="TypeCattle" embed-xml="true" fetch="select" insert="true" name="typeCattle" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="type_cattle_id"/>
+        </many-to-one>
+        <many-to-one class="TypeClassBeef" embed-xml="true" fetch="select" insert="true" name="typeClassBeef" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="type_class_beef_id"/>
+        </many-to-one>
+        <many-to-one class="TypeClassDairy" embed-xml="true" fetch="select" insert="true" name="typeClassDairy" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="type_class_dairy_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="name"/>
+        </property>
+        <property generated="never" lazy="false" name="privateNo" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="private_no"/>
+        </property>
+        <property generated="never" lazy="false" name="sex" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="sex"/>
+        </property>
+        <property generated="never" lazy="false" name="birthday" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="birthday"/>
+        </property>
+        <property generated="never" lazy="false" name="color" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="color"/>
+        </property>
+        <property generated="never" lazy="false" name="pic" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="pic"/>
+        </property>
+        <property generated="never" lazy="false" name="pedigree" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="pedigree"/>
+        </property>
+        <property generated="never" lazy="false" name="lot" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="lot"/>
+        </property>
+        <property generated="never" lazy="false" name="bidder" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="bidder"/>
+        </property>
+        <property generated="never" lazy="false" name="weight" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="weight" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="weightBirth" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="weight_birth" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="weightWean" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="weight_wean" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="weightYear" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="weight_year" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="strainStartPrice" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="strain_start_price" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="strainEndPrice" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="strain_end_price" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="strainPercen" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="strain_percen" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="strainExcise" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="strain_excise" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="father" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="father"/>
+        </property>
+        <property generated="never" lazy="false" name="mother" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="mother"/>
+        </property>
+        <property generated="never" lazy="false" name="grandfather" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="grandfather"/>
+        </property>
+        <property generated="never" lazy="false" name="grandmother" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="grandmother"/>
+        </property>
+        <property generated="never" lazy="false" name="dadGrandfather" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="dad_grandfather"/>
+        </property>
+        <property generated="never" lazy="false" name="dadGrandmother" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="dad_grandmother"/>
+        </property>
+        <property generated="never" lazy="false" name="momGrandfather" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="mom_grandfather"/>
+        </property>
+        <property generated="never" lazy="false" name="momGrandmother" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="mom_grandmother"/>
+        </property>
+        <property generated="never" lazy="false" name="grandpa" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="grandpa"/>
+        </property>
+        <property generated="never" lazy="false" name="gramdma" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="gramdma"/>
+        </property>
+        <property generated="never" lazy="false" name="momGrandpa" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="mom_grandpa"/>
+        </property>
+        <property generated="never" lazy="false" name="momGrandma" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="mom_grandma"/>
+        </property>
+        <property generated="never" lazy="false" name="dadGrandpa" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="dad_grandpa"/>
+        </property>
+        <property generated="never" lazy="false" name="dadGrandma" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="dad_grandma"/>
+        </property>
+        <property generated="never" lazy="false" name="rateMilk" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="rate_milk"/>
+        </property>
+        <property generated="never" lazy="false" name="description" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="description"/>
+        </property>
+        <property generated="never" lazy="false" name="cattleStatus" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="cattle_status"/>
+        </property>
+        <property generated="never" lazy="false" name="commen" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="commen"/>
+        </property>
+    </class>
+</hibernate-mapping>

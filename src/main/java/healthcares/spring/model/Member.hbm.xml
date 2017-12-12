@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="Member" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="member">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Privilege" embed-xml="true" fetch="select" insert="true" name="privilege" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="privilege_id" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="username" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="username" unique="true"/>
+        </property>
+        <property generated="never" lazy="false" name="password" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="password"/>
+        </property>
+        <property generated="never" lazy="false" name="first" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="first"/>
+        </property>
+        <property generated="never" lazy="false" name="last" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="last"/>
+        </property>
+        <property generated="never" lazy="false" name="birthday" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="birthday"/>
+        </property>
+        <property generated="never" lazy="false" name="age" optimistic-lock="true" type="string" unique="false">
+            <column length="5" name="age"/>
+        </property>
+        <property generated="never" lazy="false" name="sex" optimistic-lock="true" type="string" unique="false">
+            <column length="5" name="sex"/>
+        </property>
+        <property generated="never" lazy="false" name="idCard" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="id_card"/>
+        </property>
+        <property generated="never" lazy="false" name="nationlity" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="nationlity"/>
+        </property>
+        <property generated="never" lazy="false" name="tel" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="tel"/>
+        </property>
+        <property generated="never" lazy="false" name="mobile" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="mobile"/>
+        </property>
+        <property generated="never" lazy="false" name="fax" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="fax"/>
+        </property>
+        <property generated="never" lazy="false" name="address" optimistic-lock="true" type="string" unique="false">
+            <column name="address"/>
+        </property>
+        <property generated="never" lazy="false" name="zipcode" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="zipcode">
+                <comment>√À— ‰ª√…≥’¬Ï</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="email" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="email"/>
+        </property>
+        <property generated="never" lazy="false" name="altEmail" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="alt_email">
+                <comment>‡¡≈Ï ”√Õß</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="image" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="image"/>
+        </property>
+        <property generated="never" lazy="false" name="question" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="question"/>
+        </property>
+        <property generated="never" lazy="false" name="answer" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="answer"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="toolBorrows" optimistic-lock="true" sort="unsorted" table="tool_borrow">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="ToolBorrow" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cattleWeans" optimistic-lock="true" sort="unsorted" table="cattle_wean">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="CattleWean" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="breedings" optimistic-lock="true" sort="unsorted" table="breeding">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="Breeding" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cattleYears" optimistic-lock="true" sort="unsorted" table="cattle_year">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="CattleYear" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="treatmentHistories" optimistic-lock="true" sort="unsorted" table="treatment_history">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="TreatmentHistory" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cattleStamps" optimistic-lock="true" sort="unsorted" table="cattle_stamp">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="CattleStamp" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="toolBrokens" optimistic-lock="true" sort="unsorted" table="tool_broken">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="ToolBroken" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="festivities" optimistic-lock="true" sort="unsorted" table="festivity">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="Festivity" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="semenOrders" optimistic-lock="true" sort="unsorted" table="semen_order">
+            <key on-delete="noaction">
+                <column name="member_id" not-null="true"/>
+            </key>
+            <one-to-many class="SemenOrder" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="toolImports" optimistic-lock="true" sort="unsorted" table="tool_import">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="ToolImport" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="bills" optimistic-lock="true" sort="unsorted" table="bill">
+            <key on-delete="noaction">
+                <column name="member_id" not-null="true"/>
+            </key>
+            <one-to-many class="Bill" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="hornDeterings" optimistic-lock="true" sort="unsorted" table="horn_detering">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="HornDetering" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cattleFattens" optimistic-lock="true" sort="unsorted" table="cattle_fatten">
+            <key on-delete="noaction">
+                <column name="member_id" not-null="true"/>
+            </key>
+            <one-to-many class="CattleFatten" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="synchronizes" optimistic-lock="true" sort="unsorted" table="synchronize">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="Synchronize" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="formulaRecords" optimistic-lock="true" sort="unsorted" table="formula_record">
+            <key on-delete="noaction">
+                <column name="Member_id"/>
+            </key>
+            <one-to-many class="FormulaRecord" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="semenImports" optimistic-lock="true" sort="unsorted" table="semen_import">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="SemenImport" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="semenReleases" optimistic-lock="true" sort="unsorted" table="semen_release">
+            <key on-delete="noaction">
+                <column name="member_id" not-null="true"/>
+            </key>
+            <one-to-many class="SemenRelease" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="misscarries" optimistic-lock="true" sort="unsorted" table="misscarry">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="Misscarry" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="rawMaterialReleases" optimistic-lock="true" sort="unsorted" table="raw_material_release">
+            <key on-delete="noaction">
+                <column name="member_id" not-null="true"/>
+            </key>
+            <one-to-many class="RawMaterialRelease" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cattleShows" optimistic-lock="true" sort="unsorted" table="cattle_show">
+            <key on-delete="noaction">
+                <column name="member_id" not-null="true"/>
+            </key>
+            <one-to-many class="CattleShow" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="medicineImports" optimistic-lock="true" sort="unsorted" table="medicine_import">
+            <key on-delete="noaction">
+                <column name="member_id" not-null="true"/>
+            </key>
+            <one-to-many class="MedicineImport" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="toolReleases" optimistic-lock="true" sort="unsorted" table="tool_release">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="ToolRelease" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="alerts" optimistic-lock="true" sort="unsorted" table="alert">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="Alert" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="medicineReleases" optimistic-lock="true" sort="unsorted" table="medicine_release">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="MedicineRelease" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="rawMaterialImports" optimistic-lock="true" sort="unsorted" table="raw_material_import">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="RawMaterialImport" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cattleStrains" optimistic-lock="true" sort="unsorted" table="cattle_strain">
+            <key on-delete="noaction">
+                <column name="member_id" not-null="true"/>
+            </key>
+            <one-to-many class="CattleStrain" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="rawMaterialOrders" optimistic-lock="true" sort="unsorted" table="raw_material_order">
+            <key on-delete="noaction">
+                <column name="member_id" not-null="true"/>
+            </key>
+            <one-to-many class="RawMaterialOrder" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="toolOrders" optimistic-lock="true" sort="unsorted" table="tool_order">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="ToolOrder" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="diseases" optimistic-lock="true" sort="unsorted" table="disease">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="Disease" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="formulaRecord2s" optimistic-lock="true" sort="unsorted" table="formula_record2">
+            <key on-delete="noaction">
+                <column name="Member_id"/>
+            </key>
+            <one-to-many class="FormulaRecord2" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="medicineOrders" optimistic-lock="true" sort="unsorted" table="medicine_order">
+            <key on-delete="noaction">
+                <column name="member_id" not-null="true"/>
+            </key>
+            <one-to-many class="MedicineOrder" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="pregnants" optimistic-lock="true" sort="unsorted" table="pregnant">
+            <key on-delete="noaction">
+                <column name="member_id"/>
+            </key>
+            <one-to-many class="Pregnant" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

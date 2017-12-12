@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 11, 2017 5:40:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <subclass name="healthcares.spring.repository.CattleWeanServiceImpl" extends="healthcares.spring.service.CattleWeanService" discriminator-value="CattleWeanServiceImpl"
+    lazy="false">
+        <many-to-one name="cattleweandao" class="healthcares.spring.dao.CattleWeanDao" access="field" fetch="join">
+            <column name="CATTLEWEANDAO" />
+        </many-to-one>
+    </subclass>
+</hibernate-mapping>

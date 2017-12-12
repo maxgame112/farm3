@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 11, 2017 5:40:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="healthcares.spring.controller.SettingController" table="SETTINGCONTROLLER">
+        <id name="memberService" type="healthcares.spring.service.MemberService" access="field">
+            <column name="MEMBERSERVICE" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="groupmedicineservice" class="healthcares.spring.service.GroupMedicineService" access="field" fetch="join">
+            <column name="GROUPMEDICINESERVICE" />
+        </many-to-one>
+        <many-to-one name="typealertservice" class="healthcares.spring.service.TypeAlertService" access="field" fetch="join">
+            <column name="TYPEALERTSERVICE" />
+        </many-to-one>
+        <many-to-one name="statusbreedservice" class="healthcares.spring.service.StatusBreedService" access="field" fetch="join">
+            <column name="STATUSBREEDSERVICE" />
+        </many-to-one>
+        <many-to-one name="colorservice" class="healthcares.spring.service.ColorService" access="field" fetch="join">
+            <column name="COLORSERVICE" />
+        </many-to-one>
+        <many-to-one name="privilegeservice" class="healthcares.spring.service.PrivilegeService" access="field" fetch="join">
+            <column name="PRIVILEGESERVICE" />
+        </many-to-one>
+        <many-to-one name="typesyncservice" class="healthcares.spring.service.TypeSyncService" access="field" fetch="join">
+            <column name="TYPESYNCSERVICE" />
+        </many-to-one>
+        <many-to-one name="syncservice" class="healthcares.spring.service.SyncService" access="field" fetch="join">
+            <column name="SYNCSERVICE" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

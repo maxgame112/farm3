@@ -59,7 +59,7 @@ xmlhttp.send();
 			<div class="col-md-3">
 				<div class="jumbotron" style="background-color: rgb(218, 68, 83)"
 						align="center">
-						<p style="font-size: 28px; font-weight: 700; color: white;">บันทึกข้อมูลการเหนี่ยมนำ</p>
+						<p style="font-size: 28px; font-weight: 700; color: white;">บันทึกข้อมูลการเหนี่ยวนำ</p>
 				</div>	
 			</div>
 			<div class="row">

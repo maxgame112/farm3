@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final -->
+<hibernate-mapping>
+
+<class
+    name="CattleNutrient"
+    table="cattle_nutrient"
+    catalog="farm2017"
+    optimistic-lock="version"
+>
+
+	<id 
+        name="id"
+        type="java.lang.Integer"
+    >
+    
+<column name="id" />
+	    <generator class="identity" />
+    </id>
+
+
+
+
+    <many-to-one
+	    name="formulaRecord"
+	    class="FormulaRecord"
+	    
+        fetch="select"
+    >
+<column name="Formula_record_id" />
+   </many-to-one>
+    <many-to-one
+	    name="typeNutrient"
+	    class="TypeNutrient"
+	    
+        fetch="select"
+    >
+<column name="Type_nutrient_id" />
+   </many-to-one>
+    <many-to-one
+	    name="unitNutrient"
+	    class="UnitNutrient"
+	    
+        fetch="select"
+    >
+<column name="Unit_nutrient_id" />
+   </many-to-one>
+    <property
+        name="date"
+	    type="date"
+    >
+<column name="Date" length="10" />
+  </property>
+
+    <property
+        name="dm"
+	    type="java.lang.Float"
+    >
+<column name="DM" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="nem"
+	    type="java.lang.Float"
+    >
+<column name="NEm" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="neg"
+	    type="java.lang.Float"
+    >
+<column name="NEg" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="ca"
+	    type="java.lang.Float"
+    >
+<column name="Ca" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="p"
+	    type="java.lang.Float"
+    >
+<column name="P" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="mp"
+	    type="java.lang.Float"
+    >
+<column name="MP" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="me"
+	    type="java.lang.Float"
+    >
+<column name="ME" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="protein"
+	    type="java.lang.Float"
+    >
+<column name="Protein" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="tdn"
+	    type="java.lang.Float"
+    >
+<column name="TDN" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="nel"
+	    type="java.lang.Float"
+    >
+<column name="NEL" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="ndf"
+	    type="java.lang.Float"
+    >
+<column name="NDF" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="adf"
+	    type="java.lang.Float"
+    >
+<column name="ADF" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="uip"
+	    type="java.lang.Float"
+    >
+<column name="UIP" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="dip"
+	    type="java.lang.Float"
+    >
+<column name="DIP" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="vitA"
+	    type="java.lang.Float"
+    >
+<column name="VitA" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="vitE"
+	    type="java.lang.Float"
+    >
+<column name="VitE" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="nfc"
+	    type="java.lang.Float"
+    >
+<column name="NFC" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="nfcperDip"
+	    type="java.lang.Float"
+    >
+<column name="NFCperDIP" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="ndfRoughage"
+	    type="java.lang.Float"
+    >
+<column name="NDF_roughage" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="urea"
+	    type="java.lang.Float"
+    >
+<column name="Urea" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="cp"
+	    type="java.lang.Float"
+    >
+<column name="CP" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="costsWeight"
+	    type="java.lang.Float"
+    >
+<column name="Costs_weight" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="costsFood"
+	    type="java.lang.Float"
+    >
+<column name="Costs_food" precision="12" scale="0" />
+  </property>
+
+
+</class>
+
+</hibernate-mapping>

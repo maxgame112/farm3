@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final -->
+<hibernate-mapping>
+
+<class
+    name="MedicineImport"
+    table="medicine_import"
+    catalog="farm2017"
+    optimistic-lock="version"
+>
+
+	<id 
+        name="id"
+        type="java.lang.Integer"
+    >
+    
+<column name="id" />
+	    <generator class="identity" />
+    </id>
+
+
+
+
+    <many-to-one
+	    name="medicine"
+	    class="Medicine"
+	    
+        fetch="select"
+    >
+<column name="medicine_id" not-null="true" />
+   </many-to-one>
+    <many-to-one
+	    name="member"
+	    class="Member"
+	    
+        fetch="select"
+    >
+<column name="member_id" not-null="true" />
+   </many-to-one>
+    <property
+        name="lot"
+	    type="java.lang.Integer"
+    >
+<column name="lot" />
+  </property>
+
+    <property
+        name="quantity"
+	    type="java.lang.Integer"
+    >
+<column name="quantity" />
+  </property>
+
+    <property
+        name="price"
+	    type="java.lang.Long"
+    >
+<column name="price" precision="10" scale="0" />
+  </property>
+
+    <property
+        name="import_"
+	    type="string"
+    >
+<column name="import" length="200" >
+<comment>นำเข้าจาก</comment>
+</column>  </property>
+
+    <property
+        name="place"
+	    type="string"
+    >
+<column name="place" length="100" >
+<comment>สถานที่เก็บ</comment>
+</column>  </property>
+
+    <property
+        name="dayMfd"
+	    type="date"
+    >
+<column name="day_mfd" length="10" />
+  </property>
+
+    <property
+        name="dayExp"
+	    type="date"
+    >
+<column name="day_exp" length="10" />
+  </property>
+
+    <property
+        name="billId"
+	    type="java.lang.Integer"
+    >
+<column name="bill_id" />
+  </property>
+
+    <property
+        name="beforeQuantity"
+	    type="int"
+    >
+<column name="before_quantity" not-null="true" />
+  </property>
+
+    <property
+        name="day"
+	    type="timestamp"
+    >
+<column name="day" length="19" not-null="true" >
+<comment>วันที่นำเข้า</comment>
+</column>  </property>
+
+    <property
+        name="status"
+	    type="int"
+    >
+<column name="status" not-null="true" >
+<comment>0 แจ้งเตือน</comment>
+</column>  </property>
+
+
+</class>
+
+</hibernate-mapping>

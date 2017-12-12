@@ -41,4 +41,5 @@
   <table-filter match-catalog="induct" match-name="type_medicine"/>
   <table-filter match-catalog="induct" match-name="type_sync"/>
   <table-filter match-catalog="induct" match-name="unit_medicine"/>
+  <table-filter match-catalog="farm2017" match-name="medicine_order"/>
 </hibernate-reverse-engineering>

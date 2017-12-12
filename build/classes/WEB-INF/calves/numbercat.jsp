@@ -48,14 +48,16 @@
 								<fieldset><br>
 										<div class="row form-group">
 											<label class="col-md-offset-s col-md-3 control-lable"><font color="red">* </font> เบอร์แรกเกิด</label>
-														<select class="form-control" id="calves.id" name="calves.id" onchange="show(this.value)">
-																	<option value="0">เลือกโค</option>
-															<c:forEach items="${calve }" var="calves">
+														<div>
+														<select class="form-control" id="calves.id" name="calves.id">
+																	<option value="">เลือกโค</option>
+															<c:forEach items="${calves }" var="calves">
 													
 																<option value="${calves.id }" >&nbsp;${calves.numDate }</option>
 															</c:forEach>
-														</select>										
-										</div>	
+														</select>
+							 						</div>
+							 						</div>
 										
 										<div class="row form-group">
 											<label class="col-md-offset-s col-md-3 control-lable"><font color="red">* </font>เบอร์ที่ต้องการตี</label>

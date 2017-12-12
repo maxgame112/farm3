@@ -24,8 +24,8 @@
  <!-- Sweet alert -->
  <link href="<c:url value="/resources/css/sweetalert.css"/>" rel="stylesheet">
  <script src="<c:url value="/resources/js/sweetalert-dev.js"/>"></script>
- <%--	<script src="<c:url value="/resources/js/jquery-1.10.2.js" />"></script>
-    <script src="<c:url value="/resources/js/jquery-2.1.3.min.js"/>"></script> --%>
+ 	<script src="<c:url value="/resources/js/jquery-1.10.2.js" />"></script>
+    <script src="<c:url value="/resources/js/jquery-2.1.3.min.js"/>"></script> 
  <script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
  <link href="<c:url value="/resources/css/fileinput.min.css"/>" rel="stylesheet">
  <script src="<c:url value="/resources/js/fileinput.min.js"/>"></script>

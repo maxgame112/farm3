@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="Report" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="report">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Worktogether" embed-xml="true" fetch="select" insert="true" name="worktogether" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="worktogether_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="namefestivity" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="namefestivity"/>
+        </property>
+        <property generated="never" lazy="false" name="numpeople" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="numpeople"/>
+        </property>
+        <property generated="never" lazy="false" name="numcattle" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="numcattle"/>
+        </property>
+        <property generated="never" lazy="false" name="finalprice" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="finalprice"/>
+        </property>
+        <property generated="never" lazy="false" name="festivityNo" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="festivity_No"/>
+        </property>
+    </class>
+</hibernate-mapping>

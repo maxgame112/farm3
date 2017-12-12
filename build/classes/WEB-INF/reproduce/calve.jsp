@@ -133,7 +133,7 @@ function annconf() {
 																	<option value="0">เลือกแม่โค</option>
 															<c:forEach items="${memcat }" var="mom">
 													
-																<option value="${mom.num }" >&nbsp;${mom.num }</option>
+																<option value="${mom.id }" >&nbsp;${mom.num }</option>
 															</c:forEach>
 														</select>
 							 						</div>																				

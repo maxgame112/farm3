@@ -56,24 +56,24 @@ public class CattleDaoImpl implements CattleDao {
 	
 	@Override
 	public List GetMomCattle(int s){
-		return sesssion.getCurrentSession().createQuery("from Cattle where  sex = 2 and statusCattle = 2  and teeth = "+s+" and groupCattle = 1 ").list(); //or  groupCattle = 2 
+		return sesssion.getCurrentSession().createQuery("from Cattle where  sex = 2 and statusCattle = 2 and groupCattle = 1 ").list(); //or  groupCattle = 2 
 	}
 	
 	@Override
 	public List GetMomCattle2(int s){
-		return sesssion.getCurrentSession().createQuery("from Cattle where  sex = 2 and statusCattle = 2  and teeth = "+s+" and groupCattle = 2").list();
+		return sesssion.getCurrentSession().createQuery("from Cattle where  sex = 2 and statusCattle = 2 and groupCattle = 2").list();
 	}
 	
 	@Override
 	public List GetMomCattle3(int s){
-		return sesssion.getCurrentSession().createQuery("from Cattle where  sex = 2 and statusCattle = 2  and teeth = "+s+" and groupCattle = 10").list();
+		return sesssion.getCurrentSession().createQuery("from Cattle where  sex = 2 and statusCattle = 2 and groupCattle = 10").list();
 	}
 	
 	@Override
 	public List GetFatCattle(){
 		return sesssion.getCurrentSession().createQuery("from Cattle where  sex = 1 and groupCattle = 1 and statusCattle = 2").list();
 	}
-	
+		
 	@Override
 	public List GetCalves(int c){
 		return sesssion.getCurrentSession().createQuery("from Cattle Where ageWean =  "+c+" ").list();

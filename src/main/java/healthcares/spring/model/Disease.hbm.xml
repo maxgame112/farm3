@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="Disease" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="disease">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="CableDisease" embed-xml="true" fetch="select" insert="true" name="cableDisease" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="cable_disease_id"/>
+        </many-to-one>
+        <many-to-one class="Member" embed-xml="true" fetch="select" insert="true" name="member" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="member_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="nameDisease" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="name_disease"/>
+        </property>
+        <property generated="never" lazy="false" name="symptomsOfDisease" optimistic-lock="true" type="string" unique="false">
+            <column length="5000" name="symptoms_of_disease"/>
+        </property>
+        <property generated="never" lazy="false" name="causeOfTheDisease" optimistic-lock="true" type="string" unique="false">
+            <column length="5000" name="cause_of_the_disease"/>
+        </property>
+        <property generated="never" lazy="false" name="complications" optimistic-lock="true" type="string" unique="false">
+            <column length="5000" name="complications"/>
+        </property>
+        <property generated="never" lazy="false" name="note" optimistic-lock="true" type="string" unique="false">
+            <column length="5000" name="note"/>
+        </property>
+        <property generated="never" lazy="false" name="image" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="image"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="treatmentHistories" optimistic-lock="true" sort="unsorted" table="treatment_history">
+            <key on-delete="noaction">
+                <column name="disease_id"/>
+            </key>
+            <one-to-many class="TreatmentHistory" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

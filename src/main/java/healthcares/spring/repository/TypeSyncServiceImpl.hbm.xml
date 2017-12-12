@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 11, 2017 5:40:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <subclass name="healthcares.spring.repository.TypeSyncServiceImpl" extends="healthcares.spring.service.TypeSyncService" discriminator-value="TypeSyncServiceImpl" lazy="false">
+        <many-to-one name="typesyncdao" class="healthcares.spring.dao.TypeSyncDao" access="field" fetch="join">
+            <column name="TYPESYNCDAO" />
+        </many-to-one>
+    </subclass>
+</hibernate-mapping>

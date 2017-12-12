@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="AlertStorehouse" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="alert_storehouse">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="stockMedicine" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="stock_medicine">
+                <comment>แจ้งเตือนยอดคงคลังเมื่อจำนวนต่ำกว่ากำหนด</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="stockRaw" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="stock_raw"/>
+        </property>
+        <property generated="never" lazy="false" name="stockTool" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="stock_tool"/>
+        </property>
+        <property generated="never" lazy="false" name="stockSemen" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="stock_semen"/>
+        </property>
+        <property generated="never" lazy="false" name="expMedicine" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="exp_medicine">
+                <comment>แจ้งเตือนก่อนวันหมดอายุกี่วัน</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="expRaw" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="exp_raw"/>
+        </property>
+        <property generated="never" lazy="false" name="expBucket" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="exp_bucket">
+                <comment>ก่อนวันที่ไนโตรเจนเหลวต่ำกว่ากำหนดกี่วัน</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

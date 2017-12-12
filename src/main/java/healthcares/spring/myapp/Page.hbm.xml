@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 11, 2017 5:40:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="healthcares.spring.myapp.Page" table="PAGE">
+        <id name="page" type="int">
+            <column name="PAGE" />
+            <generator class="assigned" />
+        </id>
+        <property name="pageFinal" type="int">
+            <column name="PAGEFINAL" />
+        </property>
+        <property name="pageFirst" type="int">
+            <column name="PAGEFIRST" />
+        </property>
+        <property name="pageFirst1" type="int">
+            <column name="PAGEFIRST1" />
+        </property>
+        <property name="pagePrevious" type="int">
+            <column name="PAGEPREVIOUS" />
+        </property>
+        <property name="pagePrevious1" type="int">
+            <column name="PAGEPREVIOUS1" />
+        </property>
+        <property name="pagePresent" type="int">
+            <column name="PAGEPRESENT" />
+        </property>
+        <property name="pageNext" type="int">
+            <column name="PAGENEXT" />
+        </property>
+        <property name="pageNext1" type="int">
+            <column name="PAGENEXT1" />
+        </property>
+        <property name="pageLast" type="int">
+            <column name="PAGELAST" />
+        </property>
+        <property name="pageLast1" type="int">
+            <column name="PAGELAST1" />
+        </property>
+    </class>
+</hibernate-mapping>

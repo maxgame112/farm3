@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="FormulaRecord" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="formula_record">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Member" embed-xml="true" fetch="select" insert="true" name="member" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="Member_id"/>
+        </many-to-one>
+        <many-to-one class="TypeFormula" embed-xml="true" fetch="select" insert="true" name="typeFormula" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="Type_Formula_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="typecal" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="typecal"/>
+        </property>
+        <property generated="never" lazy="false" name="breed" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="breed">
+                <comment>****</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="weightperday" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="weightperday"/>
+        </property>
+        <property generated="never" lazy="false" name="weight" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="weight"/>
+        </property>
+        <property generated="never" lazy="false" name="age" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="age"/>
+        </property>
+        <property generated="never" lazy="false" name="pregnent" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="pregnent"/>
+        </property>
+        <property generated="never" lazy="false" name="lactation" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="lactation"/>
+        </property>
+        <property generated="never" lazy="false" name="lactationperday" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="lactationperday"/>
+        </property>
+        <property generated="never" lazy="false" name="fatmilk" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="fatmilk"/>
+        </property>
+        <property generated="never" lazy="false" name="pricemilk" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="pricemilk"/>
+        </property>
+        <property generated="never" lazy="false" name="typeeating" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="typeeating"/>
+        </property>
+        <property generated="never" lazy="false" name="strain" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="strain"/>
+        </property>
+        <property generated="never" lazy="false" name="ndf" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="ndf"/>
+        </property>
+        <property generated="never" lazy="false" name="adf" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="adf"/>
+        </property>
+        <property generated="never" lazy="false" name="tdn" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="tdn"/>
+        </property>
+        <property generated="never" lazy="false" name="nel" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="nel"/>
+        </property>
+        <property generated="never" lazy="false" name="walk" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="walk"/>
+        </property>
+        <property generated="never" lazy="false" name="needtdn" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="needtdn"/>
+        </property>
+        <property generated="never" lazy="false" name="neednel" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="neednel"/>
+        </property>
+        <property generated="never" lazy="false" name="needadf" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="needadf"/>
+        </property>
+        <property generated="never" lazy="false" name="needndf" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="needndf"/>
+        </property>
+        <property generated="never" lazy="false" name="uip" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="uip"/>
+        </property>
+        <property generated="never" lazy="false" name="dip" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="dip"/>
+        </property>
+        <property generated="never" lazy="false" name="ca" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="ca"/>
+        </property>
+        <property generated="never" lazy="false" name="p" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="p"/>
+        </property>
+        <property generated="never" lazy="false" name="vita" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="vita"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="typeNutrients" optimistic-lock="true" sort="unsorted" table="type_nutrient">
+            <key on-delete="noaction">
+                <column name="Formula_record_id"/>
+            </key>
+            <one-to-many class="TypeNutrient" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cattleNutrients" optimistic-lock="true" sort="unsorted" table="cattle_nutrient">
+            <key on-delete="noaction">
+                <column name="Formula_record_id"/>
+            </key>
+            <one-to-many class="CattleNutrient" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cattleDetails" optimistic-lock="true" sort="unsorted" table="cattle_detail">
+            <key on-delete="noaction">
+                <column name="Formula_record_id"/>
+            </key>
+            <one-to-many class="CattleDetail" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="rawMaterialFormulas" optimistic-lock="true" sort="unsorted" table="raw_material_formula">
+            <key on-delete="noaction">
+                <column name="Formula_record_id"/>
+            </key>
+            <one-to-many class="RawMaterialFormula" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -361,13 +361,14 @@ public class ReproduceController {
 		map.put("ulist",memberService.getMemberByUsername(sessionUsername));
 		Pregnant pregnant = new Pregnant();
 		map.put("pregnant", pregnant);
-		map.put("memcat", cattleservice.GetMomCattle(2));
+		map.put("memcat", cattleservice.GetMomCattle2(1));
 		//map.put("memcat", pregnantservice.getPregnantBynum(2));
 		map.put("statprege", statuspregnantservice.getAllStatusPregnant());
 		map.put("dAlertList", typealertservice.getAllTypeAlertById(3));
 		map.put("NdAlertList", typealertservice.getAllTypeAlertById(1));
 		return "/reproduce/pregnant";  												
 	}
+		
 		
 	@RequestMapping(value="pregnant_detail",method=RequestMethod.POST)
 	public String preg_detail(Map<String, Object> map,@RequestParam("id") int id,HttpSession session) {
@@ -526,7 +527,7 @@ public class ReproduceController {
 		map.put("ulist",memberService.getMemberByUsername(sessionUsername));		
 		Cattle cattle = new Cattle();
 		map.put("cattle", cattle);
-		map.put("memcat", cattleservice.GetMomCattle2(3));
+		map.put("memcat", cattleservice.GetMomCattle(9));
 		map.put("fatcat", cattleservice.GetFatCattle());
 		map.put("statborn", statusbornservice.getAllStatusBorn());
 		map.put("statusbreed", statusbreedserive.getAllStatusBreed());
@@ -880,19 +881,9 @@ public class ReproduceController {
 		map.put("synchronize", synchronize);
 		map.put("typesync", typesync);
 		map.put("sync", sync);
-		map.put("momcat", cattleservice.GetMomCattle3(4));
+		map.put("momcat", cattleservice.GetMomCattle3(1));
 		map.put("typesync", typesyncservice.getAllTypeSync());
 		return "/reproduce/synchroniz";  												
-	}
-	
-	@RequestMapping(value="/getSynchroniz",method = RequestMethod.GET)
-	public String getSynchroniz(@RequestParam("q") String q,Map<String, Object> map){
-		int typesyncid = Integer.parseInt(q);
-		TypeSync typesync = typesyncservice.getTypeSync(typesyncid);
-		String typename = typesync.getValue();
-		map.put("syncList",syncservice.getSyncByq(q) );
-		map.put("Typesync", typename);
-		return "/reproduce/getsynchroniz";
 	}
 	
 	@SuppressWarnings("unchecked")

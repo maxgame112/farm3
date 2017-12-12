@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final -->
+<hibernate-mapping>
+
+<class
+    name="Privilege"
+    table="privilege"
+    catalog="farm2017"
+    optimistic-lock="version"
+>
+
+	<id 
+        name="id"
+        type="java.lang.Integer"
+    >
+    
+<column name="id" />
+	    <generator class="identity" />
+    </id>
+
+
+
+
+    <property
+        name="value"
+	    type="string"
+    >
+<column name="value" length="45" not-null="true" />
+  </property>
+
+    <property
+        name="permitAddMed"
+	    type="int"
+    >
+<column name="permit_add_med" not-null="true" >
+<comment>0 ไม่มีสิทธิ์ 1 มีสิทธิ์</comment>
+</column>  </property>
+
+    <property
+        name="permitImportMed"
+	    type="int"
+    >
+<column name="permit_import_med" not-null="true" />
+  </property>
+
+    <property
+        name="permitReleaseMed"
+	    type="int"
+    >
+<column name="permit_release_med" not-null="true" />
+  </property>
+
+    <property
+        name="permitOrderMed"
+	    type="int"
+    >
+<column name="permit_order_med" not-null="true" />
+  </property>
+
+    <property
+        name="permitAddSemen"
+	    type="int"
+    >
+<column name="permit_add_semen" not-null="true" />
+  </property>
+
+    <property
+        name="permitImportSemen"
+	    type="int"
+    >
+<column name="permit_import_semen" not-null="true" />
+  </property>
+
+    <property
+        name="permitReleaseSemen"
+	    type="int"
+    >
+<column name="permit_release_semen" not-null="true" />
+  </property>
+
+    <property
+        name="permitOrderSemen"
+	    type="int"
+    >
+<column name="permit_order_semen" not-null="true" />
+  </property>
+
+    <property
+        name="permitAddRaw"
+	    type="int"
+    >
+<column name="permit_add_raw" not-null="true" />
+  </property>
+
+    <property
+        name="permitImportRaw"
+	    type="int"
+    >
+<column name="permit_import_raw" not-null="true" />
+  </property>
+
+    <property
+        name="permitReleaseRaw"
+	    type="int"
+    >
+<column name="permit_release_raw" not-null="true" />
+  </property>
+
+    <property
+        name="permitOrderRaw"
+	    type="int"
+    >
+<column name="permit_order_raw" not-null="true" />
+  </property>
+
+    <property
+        name="permitAddTool"
+	    type="int"
+    >
+<column name="permit_add_tool" not-null="true" />
+  </property>
+
+    <property
+        name="permitImportTool"
+	    type="int"
+    >
+<column name="permit_import_tool" not-null="true" />
+  </property>
+
+    <property
+        name="permitReleaseTool"
+	    type="int"
+    >
+<column name="permit_release_tool" not-null="true" />
+  </property>
+
+    <property
+        name="permitBorrowTool"
+	    type="int"
+    >
+<column name="permit_borrow_tool" not-null="true" />
+  </property>
+
+    <property
+        name="permitOrderTool"
+	    type="int"
+    >
+<column name="permit_order_tool" not-null="true" />
+  </property>
+
+    <property
+        name="permitSetting"
+	    type="int"
+    >
+<column name="permit_setting" not-null="true" />
+  </property>
+
+    <property
+        name="permitSms"
+	    type="int"
+    >
+<column name="permit_sms" not-null="true" />
+  </property>
+
+
+	<set name="members"
+table="member"
+	inverse="true"
+	lazy="true"	 		
+	 fetch="select"
+	>
+		<key
+		> 
+<column name="privilege_id" not-null="true" />
+		</key>
+<one-to-many class="Member"
+/>
+	</set>
+
+</class>
+
+</hibernate-mapping>

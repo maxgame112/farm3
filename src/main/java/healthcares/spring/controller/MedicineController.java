@@ -148,10 +148,7 @@ public class MedicineController {
 	public ModelAndView order_medicine(HttpSession session,Map<String, Object> map) {
 		
 		String sessionUsername = (String)session.getAttribute("username");
-		if(sessionUsername==null){
-			ModelAndView model = new ModelAndView("no_login");
-			return model;
-		}
+
 		map.put("ulist", memberService.getMemberByUsername(sessionUsername));
 		MedicineOrder mediorder = new MedicineOrder();
 		map.put("ordermed",mediorder);

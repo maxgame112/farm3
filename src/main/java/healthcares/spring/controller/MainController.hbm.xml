@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 11, 2017 5:40:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="healthcares.spring.controller.MainController" table="MAINCONTROLLER">
+        <id name="context" type="javax.servlet.ServletContext" access="field">
+            <column name="CONTEXT" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="memberService" class="healthcares.spring.service.MemberService" access="field" fetch="join">
+            <column name="MEMBERSERVICE" />
+        </many-to-one>
+        <many-to-one name="privilegeService" class="healthcares.spring.service.PrivilegeService" access="field" fetch="join">
+            <column name="PRIVILEGESERVICE" />
+        </many-to-one>
+        <many-to-one name="farmService" class="healthcares.spring.service.FarmService" access="field" fetch="join">
+            <column name="FARMSERVICE" />
+        </many-to-one>
+        <many-to-one name="md5" class="healthcares.spring.myapp.MD5" access="field" fetch="join">
+            <column name="MD5" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

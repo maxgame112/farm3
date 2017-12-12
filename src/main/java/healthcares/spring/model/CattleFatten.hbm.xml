@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final -->
+<hibernate-mapping>
+
+<class
+    name="CattleFatten"
+    table="cattle_fatten"
+    catalog="farm2017"
+    optimistic-lock="version"
+>
+
+	<id 
+        name="id"
+        type="java.lang.Integer"
+    >
+    
+<column name="id" />
+	    <generator class="identity" />
+    </id>
+
+
+
+
+    <many-to-one
+	    name="member"
+	    class="Member"
+	    
+        fetch="select"
+    >
+<column name="member_id" not-null="true" />
+   </many-to-one>
+    <property
+        name="quantity"
+	    type="java.lang.Integer"
+    >
+<column name="quantity" />
+  </property>
+
+    <property
+        name="lot"
+	    type="string"
+    >
+<column name="lot" length="50" />
+  </property>
+
+    <property
+        name="gene"
+	    type="string"
+    >
+<column name="gene" length="50" not-null="true" />
+  </property>
+
+    <property
+        name="weight"
+	    type="java.lang.Float"
+    >
+<column name="weight" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="startPrice"
+	    type="java.lang.Float"
+    >
+<column name="start_price" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="endPrice"
+	    type="java.lang.Float"
+    >
+<column name="end_price" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="totalPercen"
+	    type="java.lang.Float"
+    >
+<column name="total_percen" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="totalExcise"
+	    type="java.lang.Float"
+    >
+<column name="total_excise" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="cattleStatus"
+	    type="int"
+    >
+<column name="cattle_status" not-null="true" />
+  </property>
+
+    <property
+        name="commen"
+	    type="string"
+    >
+<column name="commen" length="100" />
+  </property>
+
+    <property
+        name="pic"
+	    type="string"
+    >
+<column name="pic" length="50" />
+  </property>
+
+    <property
+        name="bidder"
+	    type="string"
+    >
+<column name="bidder" length="100" />
+  </property>
+
+
+	<set name="fattenLists"
+table="fatten_list"
+	inverse="true"
+	lazy="true"	 		
+	 fetch="select"
+	>
+		<key
+		> 
+<column name="cattle_fatten_id" not-null="true" />
+		</key>
+<one-to-many class="FattenList"
+/>
+	</set>
+
+</class>
+
+</hibernate-mapping>

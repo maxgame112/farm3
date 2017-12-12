@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final -->
+<hibernate-mapping>
+
+<class
+    name="Medicine"
+    table="medicine"
+    catalog="farm2017"
+    optimistic-lock="version"
+>
+
+	<id 
+        name="id"
+        type="java.lang.Integer"
+    >
+    
+<column name="id" />
+	    <generator class="identity" />
+    </id>
+
+
+
+
+    <many-to-one
+	    name="groupMedicine"
+	    class="GroupMedicine"
+	    
+        fetch="select"
+    >
+<column name="group_medicine_id" />
+   </many-to-one>
+    <many-to-one
+	    name="unitMedicine"
+	    class="UnitMedicine"
+	    
+        fetch="select"
+    >
+<column name="unit_medicine_id" />
+   </many-to-one>
+    <property
+        name="tradeName"
+	    type="string"
+    >
+<column name="trade_name" length="500" />
+  </property>
+
+    <property
+        name="scientificName"
+	    type="string"
+    >
+<column name="scientific_name" length="500" />
+  </property>
+
+    <property
+        name="commonName"
+	    type="string"
+    >
+<column name="common_name" length="500" />
+  </property>
+
+    <property
+        name="qty"
+	    type="java.lang.Long"
+    >
+<column name="qty" precision="10" scale="0" >
+<comment>ปริมาณ</comment>
+</column>  </property>
+
+    <property
+        name="quantity"
+	    type="java.lang.Integer"
+    >
+<column name="quantity" >
+<comment>จำนวนคงคลัง</comment>
+</column>  </property>
+
+    <property
+        name="ingredient"
+	    type="string"
+    >
+<column name="ingredient" length="3000" >
+<comment>ส่วนประกอบ</comment>
+</column>  </property>
+
+    <property
+        name="properties"
+	    type="string"
+    >
+<column name="properties" length="3000" >
+<comment>สรรพคุณ ดูศัพท์ใชอีกที  </comment>
+</column>  </property>
+
+    <property
+        name="instruction"
+	    type="string"
+    >
+<column name="instruction" length="3000" >
+<comment>วิธีการไช้</comment>
+</column>  </property>
+
+    <property
+        name="direction"
+	    type="string"
+    >
+<column name="direction" length="3000" >
+<comment>ข้อบ่งใช้ใช้</comment>
+</column>  </property>
+
+    <property
+        name="contraindicated"
+	    type="string"
+    >
+<column name="contraindicated" length="400" >
+<comment>ข้อห้ามใช้</comment>
+</column>  </property>
+
+    <property
+        name="caution"
+	    type="string"
+    >
+<column name="caution" length="300" >
+<comment>ข้อควรระวัง</comment>
+</column>  </property>
+
+    <property
+        name="sideEffect"
+	    type="string"
+    >
+<column name="side_effect" length="3000" >
+<comment>ผลข้างเคียง</comment>
+</column>  </property>
+
+    <property
+        name="distanceDiscontinued"
+	    type="string"
+    >
+<column name="distance_discontinued" length="200" >
+<comment>ระยะหยุดใช้</comment>
+</column>  </property>
+
+    <property
+        name="mfgDate"
+	    type="date"
+    >
+<column name="mfg_date" length="10" >
+<comment>วันที่ผลิต</comment>
+</column>  </property>
+
+    <property
+        name="expDate"
+	    type="date"
+    >
+<column name="exp_date" length="10" >
+<comment>วันหมดอายุ</comment>
+</column>  </property>
+
+    <property
+        name="productBy"
+	    type="string"
+    >
+<column name="product_by" length="45" />
+  </property>
+
+    <property
+        name="note"
+	    type="string"
+    >
+<column name="note" length="500" >
+<comment>หมายเหตุ</comment>
+</column>  </property>
+
+    <property
+        name="image"
+	    type="string"
+    >
+<column name="image" length="100" />
+  </property>
+
+    <property
+        name="barcode"
+	    type="string"
+    >
+<column name="barcode" length="45" >
+<comment>บาร์โค๊ด</comment>
+</column>  </property>
+
+    <property
+        name="place"
+	    type="string"
+    >
+<column name="place" length="45" />
+  </property>
+
+    <property
+        name="statusalert"
+	    type="int"
+    >
+<column name="statusalert" not-null="true" />
+  </property>
+
+    <property
+        name="medicineSuccess"
+	    type="java.lang.Integer"
+    >
+<column name="medicine_success" />
+  </property>
+
+    <property
+        name="medicineLost"
+	    type="java.lang.Integer"
+    >
+<column name="medicine_lost" />
+  </property>
+
+
+	<set name="medicineReleases"
+table="medicine_release"
+	inverse="true"
+	lazy="true"	 		
+	 fetch="select"
+	>
+		<key
+		> 
+<column name="medicine_id" not-null="true" />
+		</key>
+<one-to-many class="MedicineRelease"
+/>
+	</set>
+
+	<set name="medicineOrders"
+table="medicine_order"
+	inverse="true"
+	lazy="true"	 		
+	 fetch="select"
+	>
+		<key
+		> 
+<column name="medicine_id" not-null="true" />
+		</key>
+<one-to-many class="MedicineOrder"
+/>
+	</set>
+
+	<set name="medicineImports"
+table="medicine_import"
+	inverse="true"
+	lazy="true"	 		
+	 fetch="select"
+	>
+		<key
+		> 
+<column name="medicine_id" not-null="true" />
+		</key>
+<one-to-many class="MedicineImport"
+/>
+	</set>
+
+	<set name="treatmentHistories"
+table="treatment_history"
+	inverse="true"
+	lazy="true"	 		
+	 fetch="select"
+	>
+		<key
+		> 
+<column name="medicine_id" />
+		</key>
+<one-to-many class="TreatmentHistory"
+/>
+	</set>
+
+</class>
+
+</hibernate-mapping>

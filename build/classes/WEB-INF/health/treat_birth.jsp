@@ -376,13 +376,13 @@
 									<label class="col-md-offset-s col-md-3 control-label"><font color="red">* </font> ชื่อโค</label>
 									<div class="col-md-6">
 								 		<div>
-											<select class="form-control cattle" id="cattle" name="cattle" onchange="listcattle1();">
-												<option value="0">เลือกโค</option>
-													<c:forEach items="${cattletreat }" var="cattle">
+											<select class="form-control" id="calves.id" name="calves.id">
+																	<option value="">เลือกโค</option>
+															<c:forEach items="${calves }" var="calves">
 													
-														<option value="${cattle.id }" >&nbsp;${cattle.name }</option>
-													</c:forEach>
-											</select>
+																<option value="${calves.id }" >&nbsp;${calves.numDate }</option>
+															</c:forEach>
+														</select>
 							 			</div>
 									</div>
 								</div>	
@@ -529,18 +529,16 @@
 															<div class="col-md-6">
 																<div class="input-group">
 																<div class="input-group">
-																<c:forEach items="${dAlertList}" var="d">
+																
 																
 																		<input name	="day_input" id="day_input" value="${d.value}" type="text" class="form-control" />
 																	
 																		<span class="input-group-addon" style="border-radius: 0px 10px 10px 0px;">วัน</span>  
-																	</c:forEach>  	
+																	  	
 																
 																	
 																</div>
-																<label class="checkbox">
-																	<input type="checkbox" id="check1" onclick="EnableDisableTextBox(this)"/>กำหนดเอง
-																</label>	
+																
 																</div>
 															</div>
 														</div>

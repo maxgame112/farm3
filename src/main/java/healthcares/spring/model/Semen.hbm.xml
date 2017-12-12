@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="Semen" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="semen">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Bucket" embed-xml="true" fetch="select" insert="true" name="bucket" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="bucket_id"/>
+        </many-to-one>
+        <many-to-one class="Color" embed-xml="true" fetch="select" insert="true" name="color" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="color_id"/>
+        </many-to-one>
+        <many-to-one class="TypeCattle" embed-xml="true" fetch="select" insert="true" name="typeCattle" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="type_cattle_id"/>
+        </many-to-one>
+        <many-to-one class="TypeClassBeef" embed-xml="true" fetch="select" insert="true" name="typeClassBeef" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="type_class_beef_id">
+                <comment>****</comment>
+            </column>
+        </many-to-one>
+        <many-to-one class="TypeClassDairy" embed-xml="true" fetch="select" insert="true" name="typeClassDairy" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="type_class_dairy_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="nameCattle" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="name_cattle">
+                <comment>หมายเลขน้ำเชื้อ/ชื่อพ่อพันธุ์</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="HNumber" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="h_number">
+                <comment>เบอร์ข้างตัวพ่อพันธ์</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="colorCattle" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="color_cattle">
+                <comment>สีพ่อพันธุ์</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="tubeColor" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="tube_color">
+                <comment>สีหลอด</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="lidColor" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="lid_color">
+                <comment>สีจุกปิด</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="tubeSize" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="tube_size">
+                <comment>ขนาดหลอด</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="farm" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="farm">
+                <comment>ฟาร์มเจ้าของน้ำเชื้อ</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="dealer" optimistic-lock="true" type="string" unique="false">
+            <column length="300" name="dealer">
+                <comment>ตัวแทนจำหน่าย</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="quantity" optimistic-lock="true" type="int" unique="false">
+            <column name="quantity" not-null="true">
+                <comment>จำนวนคงคลัง</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="canister" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="canister"/>
+        </property>
+        <property generated="never" lazy="false" name="rack" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="rack"/>
+        </property>
+        <property generated="never" lazy="false" name="statusalert" optimistic-lock="true" type="int" unique="false">
+            <column name="statusalert" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="breedings" optimistic-lock="true" sort="unsorted" table="breeding">
+            <key on-delete="noaction">
+                <column name="semen_id"/>
+            </key>
+            <one-to-many class="Breeding" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="semenReleases" optimistic-lock="true" sort="unsorted" table="semen_release">
+            <key on-delete="noaction">
+                <column name="semen_id" not-null="true"/>
+            </key>
+            <one-to-many class="SemenRelease" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="semenImports" optimistic-lock="true" sort="unsorted" table="semen_import">
+            <key on-delete="noaction">
+                <column name="semen_id"/>
+            </key>
+            <one-to-many class="SemenImport" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="semenOrders" optimistic-lock="true" sort="unsorted" table="semen_order">
+            <key on-delete="noaction">
+                <column name="semen_id" not-null="true"/>
+            </key>
+            <one-to-many class="SemenOrder" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

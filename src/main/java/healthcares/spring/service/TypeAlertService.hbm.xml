@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 11, 2017 5:40:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="healthcares.spring.service.TypeAlertService" table="TYPEALERTSERVICE" abstract="true">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <list name="allTypeAlert" inverse="false" table="TYPEALERTSERVICE" lazy="true">
+            <key></key>
+            <list-index></list-index>
+            <element type="string">
+                <column name="ALLTYPEALERT" />
+            </element>
+        </list>
+    </class>
+</hibernate-mapping>

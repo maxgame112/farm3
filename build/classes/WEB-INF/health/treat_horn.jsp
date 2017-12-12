@@ -388,13 +388,18 @@
 								</div>	
 								
 								<div class="row form-group">
+										<label class="col-md-offset-s col-md-3 control-lable"><font color="red"> *</font> ชื่อโค</label>
+										<div class="col-md-6">
+											<input value="${cattle.name }" id="name" type="name" class="form-control" disabled="disabled"/>
+										</div>
+									</div>	
+								<div class="row form-group">
 									<label class="col-md-offset-s col-md-3 control-label"><font color="red">*</font> หมายเลขโค</label>
 									<div class="col-md-6"> 
 										<input name="num" id="num" type="text" class="form-control" disabled="disabled"/>
 									</div>
 								</div>	
-								
-																			
+																					
 												<div class="row form-group">
 													<label class="col-md-offset-s col-md-3 control-label"><font color="red">*</font> วันติดตามการรักษา</label>
 													<div class="col-md-6">
@@ -438,7 +443,7 @@
 						<div class="panel panel-primary">
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<span class="fa fa-list-alt fa-lg"></span> ติดตามการรักษาหลังสูญเขา</a>
+									<span class="fa fa-list-alt fa-lg"></span> ติดตามการรักษหลังสูญเขา</a>
 								</h4>
 							</div>
 							
@@ -529,18 +534,16 @@
 															<div class="col-md-6">
 																<div class="input-group">
 																<div class="input-group">
-																<c:forEach items="${dAlertList}" var="d">
 																
-																		<input name	="day_input" id="day_input" value="${d.value}" type="text" class="form-control" />
+																
+																		<input name	="day_input" id="day_input" value="${d.value}"  type="text" class="form-control" />
 																	
 																		<span class="input-group-addon" style="border-radius: 0px 10px 10px 0px;">วัน</span>  
-																	</c:forEach>  	
+																	
 																
 																	
 																</div>
-																<label class="checkbox">
-																	<input type="checkbox" id="check1" onclick="EnableDisableTextBox(this)"/>กำหนดเอง
-																</label>	
+																	
 																</div>
 															</div>
 														</div>
@@ -752,6 +755,13 @@
 																		<input value="CC" class="form-control" style="width: 50px;" disabled="true"/>
 																	</td>
 																</tbody>
+																
+															</table>
+															<table>
+																<tr>
+																<th>1</th>
+																<th>2</th>
+																</tr>
 															</table>
 														</div>
 												</div>
@@ -807,7 +817,7 @@
 								<option value="1">อาการ</option>
 							</select> 
 							
-								<span class="input-group-btn"> <input type="text" class="form-control search-query" id="search">
+								<span class="input-group-btn"> <input type="text" class="form-control search-query" id="search" oninput="search();search2()">
 									<button class="btn btn-info " type="button" onclick="search();search2()"
 												id="btnSeach"
 												style="border-radius: 0px 10px 10px 0px; padding: 5px 7px 5px 7px; margin-top: 0px;">
@@ -862,6 +872,7 @@
 									<th style="width: 190px;">สรรพคุณ</th>									
 
 								</tr>
+								
 							</thead>
 							<tbody style="text-align: center;" id="listM">
 								
@@ -989,7 +1000,7 @@ function listcattle1() { //เอาหน่วยที่ใช้ในค�
 		  data : {id:selectedValue}
 		}).done(function(element) {
 			var json = JSON.parse(element);
-		
+			
 			$( "#num" ).val( json.num );
 		  
 		  	//alert(json.unitMedicine.value);

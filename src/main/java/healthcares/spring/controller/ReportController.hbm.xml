@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 11, 2017 5:40:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="healthcares.spring.controller.ReportController" table="REPORTCONTROLLER">
+        <id name="TreatmentHistoryService" type="healthcares.spring.service.TreatmentHistoryService" access="field">
+            <column name="TREATMENTHISTORYSERVICE" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="memberservice" class="healthcares.spring.service.MemberService" access="field" fetch="join">
+            <column name="MEMBERSERVICE" />
+        </many-to-one>
+        <many-to-one name="breedingservice" class="healthcares.spring.service.BreedingService" access="field" fetch="join">
+            <column name="BREEDINGSERVICE" />
+        </many-to-one>
+        <many-to-one name="pregnantservice" class="healthcares.spring.service.PregnantService" access="field" fetch="join">
+            <column name="PREGNANTSERVICE" />
+        </many-to-one>
+        <many-to-one name="synchronizeservice" class="healthcares.spring.service.SynchronizeService" access="field" fetch="join">
+            <column name="SYNCHRONIZESERVICE" />
+        </many-to-one>
+        <many-to-one name="horndeteringservice" class="healthcares.spring.service.HornDeteringService" access="field" fetch="join">
+            <column name="HORNDETERINGSERVICE" />
+        </many-to-one>
+        <many-to-one name="cattleweanservice" class="healthcares.spring.service.CattleWeanService" access="field" fetch="join">
+            <column name="CATTLEWEANSERVICE" />
+        </many-to-one>
+        <many-to-one name="cattlestampservice" class="healthcares.spring.service.CattleStampService" access="field" fetch="join">
+            <column name="CATTLESTAMPSERVICE" />
+        </many-to-one>
+        <many-to-one name="cattleyearservice" class="healthcares.spring.service.CattleYearService" access="field" fetch="join">
+            <column name="CATTLEYEARSERVICE" />
+        </many-to-one>
+        <many-to-one name="cattleservice" class="healthcares.spring.service.CattleService" access="field" fetch="join">
+            <column name="CATTLESERVICE" />
+        </many-to-one>
+        <many-to-one name="farmservice" class="healthcares.spring.service.FarmService" access="field" fetch="join">
+            <column name="FARMSERVICE" />
+        </many-to-one>
+        <many-to-one name="misscarryservice" class="healthcares.spring.service.MisscarryService" access="field" fetch="join">
+            <column name="MISSCARRYSERVICE" />
+        </many-to-one>
+        <many-to-one name="StrToDate" class="healthcares.spring.myapp.StrToDate" access="field" fetch="join">
+            <column name="STRTODATE" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

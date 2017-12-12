@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="CattleDetail" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="cattle_detail">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Cattle" embed-xml="true" fetch="select" insert="true" name="cattle" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="cattle_id"/>
+        </many-to-one>
+        <many-to-one class="FormulaRecord" embed-xml="true" fetch="select" insert="true" name="formulaRecord" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="Formula_record_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="date" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="Date"/>
+        </property>
+        <property generated="never" lazy="false" name="age" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="Age"/>
+        </property>
+        <property generated="never" lazy="false" name="weight" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Weight" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="wpD" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="WpD" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="pregnant" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Pregnant" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="lactation" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="Lactation"/>
+        </property>
+        <property generated="never" lazy="false" name="lactationPerDays" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="LactationPerDays" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="fatMilk" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Fat_milk" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="unitBond" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="Unit_bond"/>
+        </property>
+        <property generated="never" lazy="false" name="typeEating" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="Type_eating"/>
+        </property>
+        <property generated="never" lazy="false" name="strain" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="Strain"/>
+        </property>
+        <property generated="never" lazy="false" name="unitEnergy" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="Unit_energy"/>
+        </property>
+        <property generated="never" lazy="false" name="stageWalk" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="Stage_walk"/>
+        </property>
+        <property generated="never" lazy="false" name="priceMilk" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="Price_milk"/>
+        </property>
+        <property generated="never" lazy="false" name="scoreBody" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="Score_body"/>
+        </property>
+    </class>
+</hibernate-mapping>

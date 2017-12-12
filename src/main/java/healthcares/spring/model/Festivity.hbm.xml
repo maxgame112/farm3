@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="Festivity" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="festivity">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Member" embed-xml="true" fetch="select" insert="true" name="member" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="member_id"/>
+        </many-to-one>
+        <many-to-one class="Type" embed-xml="true" fetch="select" insert="true" name="type" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="type_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="title" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="title"/>
+        </property>
+        <property generated="never" lazy="false" name="gene" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="gene"/>
+        </property>
+        <property generated="never" lazy="false" name="SWork" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="s_work"/>
+        </property>
+        <property generated="never" lazy="false" name="EWork" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="e_work"/>
+        </property>
+        <property generated="never" lazy="false" name="SData" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="s_data"/>
+        </property>
+        <property generated="never" lazy="false" name="EData" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="e_data"/>
+        </property>
+        <property generated="never" lazy="false" name="logo" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="logo"/>
+        </property>
+        <property generated="never" lazy="false" name="poster" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="poster"/>
+        </property>
+        <property generated="never" lazy="false" name="details" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="details"/>
+        </property>
+        <property generated="never" lazy="false" name="location" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="location"/>
+        </property>
+        <property generated="never" lazy="false" name="referee" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="referee"/>
+        </property>
+        <property generated="never" lazy="false" name="newStatus" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="new_status"/>
+        </property>
+        <property generated="never" lazy="false" name="cowId" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="cow_id"/>
+        </property>
+        <property generated="never" lazy="false" name="percen" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="percen"/>
+        </property>
+        <property generated="never" lazy="false" name="farmName" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="farm_name"/>
+        </property>
+        <property generated="never" lazy="false" name="phone" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="phone"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="festivityFattenHistories" optimistic-lock="true" sort="unsorted" table="festivity_fatten_history">
+            <key on-delete="noaction">
+                <column name="festivity_id"/>
+            </key>
+            <one-to-many class="FestivityFattenHistory" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="worktogethers" optimistic-lock="true" sort="unsorted" table="worktogether">
+            <key on-delete="noaction">
+                <column name="festivity_id"/>
+            </key>
+            <one-to-many class="Worktogether" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="festivityShowHistories" optimistic-lock="true" sort="unsorted" table="festivity_show_history">
+            <key on-delete="noaction">
+                <column name="festivity_id"/>
+            </key>
+            <one-to-many class="FestivityShowHistory" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="festivityStrainHistories" optimistic-lock="true" sort="unsorted" table="festivity_strain_history">
+            <key on-delete="noaction">
+                <column name="festivity_id"/>
+            </key>
+            <one-to-many class="FestivityStrainHistory" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

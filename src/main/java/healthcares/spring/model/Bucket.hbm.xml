@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="Bucket" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="bucket">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="TypeBucket" embed-xml="true" fetch="select" insert="true" name="typeBucket" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="type_bucket_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="code" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="code"/>
+        </property>
+        <property generated="never" lazy="false" name="number" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="number">
+                <comment>รหัสถัง</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="name">
+                <comment>ชื่อถัง</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="brand" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="brand">
+                <comment>ยี่ห้อ</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="size" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="size">
+                <comment>ขนาดถัง</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="weightnull" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="weightnull" precision="12" scale="0">
+                <comment>น้ำหนักถังเปล่า</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="weightfull" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="weightfull" precision="12" scale="0">
+                <comment>น้ำหนักเต็มถัง</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="diaPartition" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="dia_partition" precision="12" scale="0">
+                <comment>เส้นผ่านศูนย์กลางฝาถัง</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="diaBody" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="dia_body" precision="12" scale="0">
+                <comment>เส้นผ่านศุนย์กลางตัวถัง</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="heightBody" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="height_body" precision="12" scale="0">
+                <comment>ความสูงของถัง</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="ratioNitrogen" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="ratio_nitrogen" precision="12" scale="0">
+                <comment>อัตราการสูญเสียไนโตรเจน/วัน</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="periodNitrogen" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="period_nitrogen">
+                <comment>ระยะเวลาในการรักษาไนโตรเจนเมื่อเติมเต็มถัง นับเป็นวัน</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="goblet" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="goblet">
+                <comment>ระดับของgolet</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="diaCanister" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="dia_canister" precision="12" scale="0">
+                <comment>เส้นผ่านศูนย์กลางcanister</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="heightCanister" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="height_canister" precision="12" scale="0">
+                <comment>ความสูง canister</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="quantityCanister" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="quantity_canister">
+                <comment>จำนวน canister</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="containPerC" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="contain_per_c" precision="12" scale="0">
+                <comment>ขนาดบรรจุหลอดน้ำเชื้อ/canister</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="dayInN" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="day_in_n">
+                <comment>วันที่เติมไนโตรเจนเหลวครั้งสุดท้าย</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="dayExpN" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="day_exp_n">
+                <comment>วันที่ควรเติมไนโตรเจนเหลวครั้งใหม่</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="dayImport" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="day_import">
+                <comment>วันที่นำเข้า</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="import_" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="import">
+                <comment>นำเข้าจาก</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="place" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="place">
+                <comment>สถานที่เก็บ</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="statusalert" optimistic-lock="true" type="int" unique="false">
+            <column name="statusalert" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="semens" optimistic-lock="true" sort="unsorted" table="semen">
+            <key on-delete="noaction">
+                <column name="bucket_id"/>
+            </key>
+            <one-to-many class="Semen" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

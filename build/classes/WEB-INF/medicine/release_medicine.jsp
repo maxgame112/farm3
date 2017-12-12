@@ -8,11 +8,24 @@
 <link href="<c:url value="/resources/css/fileinput.css" />" media="all" rel='stylesheet' type='text/css' />
 <script src="<c:url value="/resources/js/clicktable.js" />"></script>
 <script src="<c:url value="/resources/js/fileinput.js" />"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link href="<c:url value="/resources/css/easy-autocomplete.min.css" />" rel='stylesheet' type='text/css' />
+<link href="<c:url value="/resources/css/easy-autocomplete.themes.min.css" />" rel='stylesheet' type='text/css' />
+<script src="<c:url value="/resources/js/jquery-1.10.2.js" />"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="<c:url value="/resources/js/jquery.easy-autocomplete.min.js" />"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+<%-- <script src="<c:url value="/resources/js/jquery.select-to-autocomplete.js" />"></script> --%>
+
 <title>การเบิกยา</title>
 </head>
-<%@ include file="../menu.jsp"%>
+
 <% int  i=1,j=1;%>
 <body>
+<%@ include file="../menu.jsp"%>
 	<br><br>
 <div class="container">
 		<div class=" row form-group">

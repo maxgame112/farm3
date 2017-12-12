@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="StatusBill" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="status_bill">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="value" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="value">
+                <comment>สถานะบิล</comment>
+            </column>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="bills" optimistic-lock="true" sort="unsorted" table="bill">
+            <key on-delete="noaction">
+                <column name="status_bill_id" not-null="true"/>
+            </key>
+            <one-to-many class="Bill" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

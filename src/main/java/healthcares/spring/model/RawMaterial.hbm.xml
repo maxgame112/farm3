@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="RawMaterial" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="raw_material">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="TypeMaterial" embed-xml="true" fetch="select" insert="true" name="typeMaterial" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="type_mateial_id"/>
+        </many-to-one>
+        <many-to-one class="UnitRawMaterial" embed-xml="true" fetch="select" insert="true" name="unitRawMaterial" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="unit_raw_material_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="150" name="name" unique="true"/>
+        </property>
+        <property generated="never" lazy="false" name="quantity" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="quantity"/>
+        </property>
+        <property generated="never" lazy="false" name="place" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="place"/>
+        </property>
+        <property generated="never" lazy="false" name="statusalert" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="statusalert"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="rawMaterialOrders" optimistic-lock="true" sort="unsorted" table="raw_material_order">
+            <key on-delete="noaction">
+                <column name="raw_material_id" not-null="true"/>
+            </key>
+            <one-to-many class="RawMaterialOrder" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="rawMaterialNutrients" optimistic-lock="true" sort="unsorted" table="raw_material_nutrient">
+            <key on-delete="noaction">
+                <column name="Raw_material_id"/>
+            </key>
+            <one-to-many class="RawMaterialNutrient" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="rawMaterialReleases" optimistic-lock="true" sort="unsorted" table="raw_material_release">
+            <key on-delete="noaction">
+                <column name="raw_material_id" not-null="true"/>
+            </key>
+            <one-to-many class="RawMaterialRelease" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="rawMaterialImports" optimistic-lock="true" sort="unsorted" table="raw_material_import">
+            <key on-delete="noaction">
+                <column name="raw_material_id"/>
+            </key>
+            <one-to-many class="RawMaterialImport" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="rawMaterialPrices" optimistic-lock="true" sort="unsorted" table="raw_material_price">
+            <key on-delete="noaction">
+                <column name="Raw_material_id"/>
+            </key>
+            <one-to-many class="RawMaterialPrice" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

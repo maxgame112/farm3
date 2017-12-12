@@ -22,7 +22,7 @@
 
 	<script type="text/javascript">
 	
-	/* function annconf() {
+	function annconf() {
 		 
 		var vfullearly = document.getElementById('statusmedicine').value;
 		
@@ -169,7 +169,7 @@
 		        document.getElementById('doseUsesage4').disabled=false;
 			} 
 		    
-		} */
+		}
 	
 	/* function annconf() {
 		var vfullearly = document.getElementById('statusTreat').value;
@@ -459,7 +459,7 @@
 												  <button type="button" class="btn btn-info btn-lg" id="help" data-toggle="modal" data-target="#myModal">ช่วยเหลือในการค้นหาโรคและยา</button>
 											</div> 	
 																
-												<!-- <div class="row form-group">
+												<div class="row form-group">
 												<label class="col-md-offset-s col-md-3 control-label"><font color="red">* </font> เลือกจำนวนยา</label>
 												<div class="col-md-6">
 											 		<div>
@@ -474,7 +474,7 @@
 																	</select>
 											 		</div>											
 												</div>
-											</div> -->
+											</div>
 												
 												
 											</fieldset>
@@ -550,11 +550,6 @@
 										</div>
 									</div>
 									
-				
-									<button type="button" id="btnAdd">
-									ADD
-									</button>
-									<button type="button" id="btnDel">DEL</button>
 									<div id="content">
 											<div class="panel panel-primary" >
 												<div class="panel-heading">
@@ -565,9 +560,9 @@
 												<div class="panel-body">
 														<div class="panel-body">
 															<table class="table table-striped table-hover  table-bordered"
-																style="font-size: 16px;" id="addtabel">
+																style="font-size: 16px;">
 																<thead>
-																	<tr id="Row1">
+																	<tr>
 																		<th style="width: 150px;">ชื่อทางการค้า</th>
 																		<th style="width: 190px;">ชื่อสามัญ</th>
 																		<th style="width: 190px;">ระยะหยุดยา (วัน)</th>
@@ -576,7 +571,6 @@
 																	</tr>	
 																</thead>
 																<tbody style="text-align: center;">
-																<tr id="Row2">
 																	<td>
 																		<div class="row form-group">
 																			<label class="col-md-offset-s col-md-3 control-label"><font color="red">* </font> เลือกยา</label>
@@ -608,8 +602,8 @@
 																	</td>
 																</tbody>
 				
-																</tr>
-																<%-- <tbody style="text-align: center;">
+																
+																<tbody style="text-align: center;">
 																	<td>
 																		<div class="row form-group">
 																			<label class="col-md-offset-s col-md-3 control-label"><font color="red">* </font> เลือกยา</label>
@@ -757,7 +751,7 @@
 																		<input name="doseUsesage" id="doseUsesage5" class="form-control" style="width: 50px;"/>
 																		<input value="CC" class="form-control" style="width: 50px;" disabled="true"/>
 																	</td>
-																</tbody> --%>
+																</tbody>
 															</table>
 														</div>
 												</div>
@@ -769,8 +763,6 @@
 								</div>
 								</div>
 								</div>
-							
-				
 							
 							<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->					
 				</div>
@@ -815,7 +807,7 @@
 								<option value="1">อาการ</option>
 							</select> 
 							
-								<span class="input-group-btn"> <input type="text" class="form-control search-query" id="search">
+								<span class="input-group-btn"> <input type="text" class="form-control search-query" id="search" oninput="search();search2()">
 									<button class="btn btn-info " type="button" onclick="search();search2()"
 												id="btnSeach"
 												style="border-radius: 0px 10px 10px 0px; padding: 5px 7px 5px 7px; margin-top: 0px;">
@@ -1184,24 +1176,6 @@ function Listmed5() { //เอาหน่วยที่ใช้ในคล�
 	e.preventDefault();
 	});
 
-	
-	$(document).ready(function () {
-	    $('#btnAdd').click(function () {
-	          var count = 1, first_row = $('#Row2');
-	            while(count-- > 0)                    first_row.clone().appendTo('#addtabel');
-	 });   
-	    $('#btnDel').click(function (){
-	    	var count =1 , first_row = $('Row2');
-	    		while(count-- > 0)  first_row.del().appendTo("addtabel");
-	    });
-	 
-	    $('#btnAddCol').click(function () {
-	        $("#addtabel tr").each(function(){
-	           $(this).append("<td><input type='checkbox'/></td>");       
-	        })
-	 });      
-	});
-	
 </script>
 </body>
 </html>

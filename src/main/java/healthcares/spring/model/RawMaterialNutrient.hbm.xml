@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="RawMaterialNutrient" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="raw_material_nutrient">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="RawMaterial" embed-xml="true" fetch="select" insert="true" name="rawMaterial" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="Raw_material_id"/>
+        </many-to-one>
+        <many-to-one class="UnitNutrient" embed-xml="true" fetch="select" insert="true" name="unitNutrient" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="Unit_nutrient_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="date" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="Date"/>
+        </property>
+        <property generated="never" lazy="false" name="protein" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Protein" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="tdn" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="TDN" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="nfc" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="NFC" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="dm" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="DM" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="uip" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="UIP" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="dip" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="DIP" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="ca" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Ca" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="p" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="P" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="urea" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Urea" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="cl" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Cl" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="k" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="K" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="s" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="S" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="mg" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Mg" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="zn" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Zn" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="cu" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Cu" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="mn" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Mn" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="co" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Co" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="se" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Se" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="i" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="I" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="vitA" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="VitA" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="vitD" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="VitD" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="vitE" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="VitE" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="nel" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="NEl" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="nem" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="NEm" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="neg" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="NEg" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="ndf" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="NDF" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="ee" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="EE" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="cp" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="CP" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="cf" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="CF" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="ash" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Ash" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="nfe" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="NFE" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="adf" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="ADF" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="adl" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="ADL" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="de" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="DE" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="me" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="ME" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="na" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Na" precision="12" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="fe" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="Fe" precision="12" scale="0"/>
+        </property>
+    </class>
+</hibernate-mapping>

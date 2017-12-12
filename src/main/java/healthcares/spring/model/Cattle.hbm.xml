@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="Cattle" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="cattle">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="CattlePedigree" embed-xml="true" fetch="select" insert="true" name="cattlePedigree" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="pedigree_id"/>
+        </many-to-one>
+        <many-to-one class="Color" embed-xml="true" fetch="select" insert="true" name="color" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="color_id"/>
+        </many-to-one>
+        <many-to-one class="Farm" embed-xml="true" fetch="select" insert="true" name="farm" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="farm_name"/>
+        </many-to-one>
+        <many-to-one class="GroupCattle" embed-xml="true" fetch="select" insert="true" name="groupCattle" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="group_cattle_id"/>
+        </many-to-one>
+        <many-to-one class="Sex" embed-xml="true" fetch="select" insert="true" name="sex" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="sex_id"/>
+        </many-to-one>
+        <many-to-one class="Stall" embed-xml="true" fetch="select" insert="true" name="stall" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="stall_id"/>
+        </many-to-one>
+        <many-to-one class="StatusBorn" embed-xml="true" fetch="select" insert="true" name="statusBorn" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="status_born_id"/>
+        </many-to-one>
+        <many-to-one class="StatusCattle" embed-xml="true" fetch="select" insert="true" name="statusCattle" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="status_cattle_id"/>
+        </many-to-one>
+        <many-to-one class="StatusTreat" embed-xml="true" fetch="select" insert="true" name="statusTreat" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="status_treat_id"/>
+        </many-to-one>
+        <many-to-one class="TypeCattle" embed-xml="true" fetch="select" insert="true" name="typeCattle" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="type_cattle_id"/>
+        </many-to-one>
+        <many-to-one class="TypeClassBeef" embed-xml="true" fetch="select" insert="true" name="typeClassBeef" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="type_class_id"/>
+        </many-to-one>
+        <many-to-one class="TypeNutrient" embed-xml="true" fetch="select" insert="true" name="typeNutrient" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="Type_nutrient_id">
+                <comment>ของก๊อต</comment>
+            </column>
+        </many-to-one>
+        <property generated="never" lazy="false" name="num" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="num"/>
+        </property>
+        <property generated="never" lazy="false" name="numEar" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="num_ear"/>
+        </property>
+        <property generated="never" lazy="false" name="numDate" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="num_date"/>
+        </property>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="name"/>
+        </property>
+        <property generated="never" lazy="false" name="teeth" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="teeth"/>
+        </property>
+        <property generated="never" lazy="false" name="age" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="age"/>
+        </property>
+        <property generated="never" lazy="false" name="ageWean" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="age_wean"/>
+        </property>
+        <property generated="never" lazy="false" name="ageHornDetering" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="age_horn_detering"/>
+        </property>
+        <property generated="never" lazy="false" name="weight" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="weight"/>
+        </property>
+        <property generated="never" lazy="false" name="weightBirth" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="weight_birth"/>
+        </property>
+        <property generated="never" lazy="false" name="weightWean" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="weight_wean"/>
+        </property>
+        <property generated="never" lazy="false" name="calved" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="calved"/>
+        </property>
+        <property generated="never" lazy="false" name="maId" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="ma_id"/>
+        </property>
+        <property generated="never" lazy="false" name="faId" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="fa_id"/>
+        </property>
+        <property generated="never" lazy="false" name="farm_1" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="farm"/>
+        </property>
+        <property generated="never" lazy="false" name="image" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="image"/>
+        </property>
+        <property generated="never" lazy="false" name="breedId" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="breed_id">
+                <comment>****</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="alert1" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="alert1"/>
+        </property>
+        <property generated="never" lazy="false" name="alert2" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="alert2"/>
+        </property>
+        <property generated="never" lazy="false" name="alert3" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="alert3"/>
+        </property>
+        <property generated="never" lazy="false" name="alert4" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="alert4"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="synchronizes" optimistic-lock="true" sort="unsorted" table="synchronize">
+            <key on-delete="noaction">
+                <column name="cattle_id"/>
+            </key>
+            <one-to-many class="Synchronize" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cattlePedigrees" optimistic-lock="true" sort="unsorted" table="cattle_pedigree">
+            <key on-delete="noaction">
+                <column name="cattle_id"/>
+            </key>
+            <one-to-many class="CattlePedigree" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="hornDeterings" optimistic-lock="true" sort="unsorted" table="horn_detering">
+            <key on-delete="noaction">
+                <column name="cattle_id"/>
+            </key>
+            <one-to-many class="HornDetering" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="misscarries" optimistic-lock="true" sort="unsorted" table="misscarry">
+            <key on-delete="noaction">
+                <column name="cattle_id"/>
+            </key>
+            <one-to-many class="Misscarry" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cattleStamps" optimistic-lock="true" sort="unsorted" table="cattle_stamp">
+            <key on-delete="noaction">
+                <column name="cattle_id"/>
+            </key>
+            <one-to-many class="CattleStamp" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cattleYears" optimistic-lock="true" sort="unsorted" table="cattle_year">
+            <key on-delete="noaction">
+                <column name="cattle_id"/>
+            </key>
+            <one-to-many class="CattleYear" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cattleDetails" optimistic-lock="true" sort="unsorted" table="cattle_detail">
+            <key on-delete="noaction">
+                <column name="cattle_id"/>
+            </key>
+            <one-to-many class="CattleDetail" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cattleWeans" optimistic-lock="true" sort="unsorted" table="cattle_wean">
+            <key on-delete="noaction">
+                <column name="cattle_id"/>
+            </key>
+            <one-to-many class="CattleWean" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="breedingsForCattlemaId" optimistic-lock="true" sort="unsorted" table="breeding">
+            <key on-delete="noaction">
+                <column name="cattlema_id"/>
+            </key>
+            <one-to-many class="Breeding" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="countBreeds" optimistic-lock="true" sort="unsorted" table="count_breed">
+            <key on-delete="noaction">
+                <column name="cattle_id"/>
+            </key>
+            <one-to-many class="CountBreed" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="treatmentHistories" optimistic-lock="true" sort="unsorted" table="treatment_history">
+            <key on-delete="noaction">
+                <column name="cattle_id"/>
+            </key>
+            <one-to-many class="TreatmentHistory" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="alerts" optimistic-lock="true" sort="unsorted" table="alert">
+            <key on-delete="noaction">
+                <column name="cattle_id"/>
+            </key>
+            <one-to-many class="Alert" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="breedingsForCattlefaId" optimistic-lock="true" sort="unsorted" table="breeding">
+            <key on-delete="noaction">
+                <column name="cattlefa_id"/>
+            </key>
+            <one-to-many class="Breeding" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

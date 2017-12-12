@@ -230,7 +230,7 @@
 												</div>											
 										</div>	
 							
-	<%-- 						<div class="row form-group">
+						<div class="row form-group">
 									<label class="col-md-offset-s col-md-3 control-label"><font color="red">*</font> คอก</label>
 								<div class="col-md-6">
 										 <div>
@@ -248,7 +248,7 @@
 											</form:select>
 										 </div>											
 								</div>
-							</div>		 --%>			
+							</div>		 			
 																												
 							<div class="row form-group">
 										<label class="col-md-offset-s col-md-3 control-lable"><font color="red">* </font> ชื่อฟาร์ม</label>

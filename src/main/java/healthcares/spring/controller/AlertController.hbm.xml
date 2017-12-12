@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 11, 2017 5:40:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="healthcares.spring.controller.AlertController" table="ALERTCONTROLLER">
+        <id name="memberservice" type="healthcares.spring.service.MemberService" access="field">
+            <column name="MEMBERSERVICE" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cattleservice" class="healthcares.spring.service.CattleService" access="field" fetch="join">
+            <column name="CATTLESERVICE" />
+        </many-to-one>
+        <many-to-one name="alertservice" class="healthcares.spring.service.AlertService" access="field" fetch="join">
+            <column name="ALERTSERVICE" />
+        </many-to-one>
+        <many-to-one name="statusalertservice" class="healthcares.spring.service.StatusAlertService" access="field" fetch="join">
+            <column name="STATUSALERTSERVICE" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

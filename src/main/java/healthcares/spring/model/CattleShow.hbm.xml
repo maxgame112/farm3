@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="CattleShow" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="cattle_show">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Member" embed-xml="true" fetch="select" insert="true" name="member" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="member_id" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="name"/>
+        </property>
+        <property generated="never" lazy="false" name="birthday" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="birthday"/>
+        </property>
+        <property generated="never" lazy="false" name="sex" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="sex"/>
+        </property>
+        <property generated="never" lazy="false" name="gene" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="gene"/>
+        </property>
+        <property generated="never" lazy="false" name="cattleStatus" optimistic-lock="true" type="int" unique="false">
+            <column name="cattle_status" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="commen" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="commen"/>
+        </property>
+        <property generated="never" lazy="false" name="father" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="father"/>
+        </property>
+        <property generated="never" lazy="false" name="mother" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="mother"/>
+        </property>
+        <property generated="never" lazy="false" name="deverloper" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="deverloper"/>
+        </property>
+        <property generated="never" lazy="false" name="pic" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="pic"/>
+        </property>
+        <property generated="never" lazy="false" name="pedegree" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="pedegree"/>
+        </property>
+    </class>
+</hibernate-mapping>

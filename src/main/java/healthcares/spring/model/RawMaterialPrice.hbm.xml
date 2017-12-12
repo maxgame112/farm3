@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final -->
+<hibernate-mapping>
+
+<class
+    name="RawMaterialPrice"
+    table="raw_material_price"
+    catalog="farm2017"
+    optimistic-lock="version"
+>
+
+	<id 
+        name="id"
+        type="java.lang.Integer"
+    >
+    
+<column name="id" />
+	    <generator class="identity" />
+    </id>
+
+
+
+
+    <many-to-one
+	    name="rawMaterial"
+	    class="RawMaterial"
+	    
+        fetch="select"
+    >
+<column name="Raw_material_id" />
+   </many-to-one>
+    <property
+        name="username"
+	    type="string"
+    >
+<column name="Username" length="20" />
+  </property>
+
+    <property
+        name="price"
+	    type="java.lang.Float"
+    >
+<column name="Price" precision="12" scale="0" />
+  </property>
+
+    <property
+        name="unit"
+	    type="string"
+    >
+<column name="Unit" length="20" />
+  </property>
+
+
+</class>
+
+</hibernate-mapping>

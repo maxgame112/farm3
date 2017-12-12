@@ -6,6 +6,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<link href="<c:url value="/resources/css/fileinput.css" />" media="all" rel='stylesheet' type='text/css' />
+<script src="<c:url value="/resources/js/clicktable.js" />"></script>
+<script src="<c:url value="/resources/js/fileinput.js" />"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link href="<c:url value="/resources/css/easy-autocomplete.min.css" />" rel='stylesheet' type='text/css' />
+<link href="<c:url value="/resources/css/easy-autocomplete.themes.min.css" />" rel='stylesheet' type='text/css' />
+<script src="<c:url value="/resources/js/jquery-1.10.2.js" />"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="<c:url value="/resources/js/jquery.easy-autocomplete.min.js" />"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
 <title>การสั่งซื้อยา</title>
 <%@ include file="../menu.jsp"%>
 </head>
@@ -124,10 +137,10 @@
 
 							<button onclick="search()"
 								class="btn btn-info search-query glyphicon glyphicon-search"
-								style="padding: 5px 10px 5px 10px;"></button>
+								style="padding: 5px 10px 5px 10px;"></button>	
 						</span>
 					</div>
-					</div>
+					</div>	
 				</div>
 			</div>
 		<hr>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 11, 2017 7:32:02 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="farm2017" dynamic-insert="false" dynamic-update="false" mutable="true" name="TypeAlert" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="type_alert">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="name"/>
+        </property>
+        <property generated="never" lazy="false" name="value" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="value"/>
+        </property>
+        <property generated="never" lazy="false" name="note" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="note"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="alerts" optimistic-lock="true" sort="unsorted" table="alert">
+            <key on-delete="noaction">
+                <column name="type_alert_id"/>
+            </key>
+            <one-to-many class="Alert" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>
